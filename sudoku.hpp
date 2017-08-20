@@ -134,7 +134,6 @@ class sudoku{
 						block |= data[l][h];
 				}
 				if(row != _pv || col != _pv || block != _pv){
-					std::cout << row << ", " << col << ", " << block << std::endl;
 					return -1;
 				}
 			}
