@@ -1,8 +1,0 @@
-1, boot up with text mode.
-  to see vi /etc/inittab
-  systemctl get-default to get default mode, multi-user.target or graphical.target
-  systemctl set-default multi-user.target
-  rm /lib/systemd/system/default.target, this is link-file, link to graphical.target, so delete it, then link to multi-user.target
-  ln -s /lib/systemd/system/multi-user.target /lib/systemd/system/default.target
-  
-  then re-boot to check. (No check caused by scp files from system to another system.)
