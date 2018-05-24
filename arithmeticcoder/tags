@@ -1,0 +1,52 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+APP	makefile	/^APP=arthcod$/;"	m
+ArithmeticCoderC	ArithmeticCoderC.cpp	/^ArithmeticCoderC::ArithmeticCoderC()$/;"	f	class:ArithmeticCoderC
+ArithmeticCoderC	ArithmeticCoderC.h	/^class ArithmeticCoderC$/;"	c
+CC	makefile	/^CC=g++$/;"	m
+CFLAGS	makefile	/^CFLAGS=-std=c++11 -mrtd=cdecl$/;"	m
+Decode	ArithmeticCoderC.cpp	/^void ArithmeticCoderC::Decode( const unsigned int low_count,$/;"	f	class:ArithmeticCoderC
+Decode	ModelOrder0C.cpp	/^void ModelOrder0C::Decode()$/;"	f	class:ModelOrder0C
+DecodeStart	ArithmeticCoderC.cpp	/^void ArithmeticCoderC::DecodeStart()$/;"	f	class:ArithmeticCoderC
+DecodeTarget	ArithmeticCoderC.cpp	/^unsigned int ArithmeticCoderC::DecodeTarget( const unsigned int total )$/;"	f	class:ArithmeticCoderC
+Encode	ArithmeticCoderC.cpp	/^void ArithmeticCoderC::Encode( const unsigned int low_count,$/;"	f	class:ArithmeticCoderC
+Encode	ModelOrder0C.cpp	/^void ModelOrder0C::Encode()$/;"	f	class:ModelOrder0C
+EncodeFinish	ArithmeticCoderC.cpp	/^void ArithmeticCoderC::EncodeFinish()$/;"	f	class:ArithmeticCoderC
+GetBit	ArithmeticCoderC.cpp	/^unsigned char ArithmeticCoderC::GetBit()$/;"	f	class:ArithmeticCoderC
+MODE_DECODE	ModelI.h	/^	MODE_DECODE$/;"	e	enum:ModeE
+MODE_ENCODE	ModelI.h	/^	MODE_ENCODE = 0,$/;"	e	enum:ModeE
+ModeE	ModelI.h	/^enum ModeE$/;"	g
+ModelI	ModelI.h	/^class ModelI$/;"	c
+ModelOrder0C	ModelOrder0C.cpp	/^ModelOrder0C::ModelOrder0C()$/;"	f	class:ModelOrder0C
+ModelOrder0C	ModelOrder0C.h	/^class ModelOrder0C : public ModelI$/;"	c
+Process	ModelI.cpp	/^void ModelI::Process( fstream *source, fstream *target, ModeE mode )$/;"	f	class:ModelI
+SetBit	ArithmeticCoderC.cpp	/^void ArithmeticCoderC::SetBit( const unsigned char bit )$/;"	f	class:ArithmeticCoderC
+SetBitFlush	ArithmeticCoderC.cpp	/^void ArithmeticCoderC::SetBitFlush()$/;"	f	class:ArithmeticCoderC
+SetFile	ArithmeticCoderC.cpp	/^void ArithmeticCoderC::SetFile( fstream *file )$/;"	f	class:ArithmeticCoderC
+__ARITHMETICCODERC_H__	ArithmeticCoderC.h	9;"	d
+__MODELI_H__	ModelI.h	9;"	d
+__MODELORDER0C_H__	ModelOrder0C.h	9;"	d
+__TOOLS_H__	tools.h	9;"	d
+g_FirstQuarter	ArithmeticCoderC.cpp	/^const unsigned int g_FirstQuarter = 0x20000000;$/;"	v
+g_Half	ArithmeticCoderC.cpp	/^const unsigned int g_Half         = 0x40000000;$/;"	v
+g_Signature	main.cpp	/^const int g_Signature = 0x434D4341;$/;"	v
+g_ThirdQuarter	ArithmeticCoderC.cpp	/^const unsigned int g_ThirdQuarter = 0x60000000;$/;"	v
+mAC	ModelI.h	/^		ArithmeticCoderC mAC;$/;"	m	class:ModelI
+mBitBuffer	ArithmeticCoderC.h	/^		unsigned char mBitBuffer;$/;"	m	class:ArithmeticCoderC
+mBitCount	ArithmeticCoderC.h	/^		unsigned char mBitCount;$/;"	m	class:ArithmeticCoderC
+mBuffer	ArithmeticCoderC.h	/^		unsigned int mBuffer;$/;"	m	class:ArithmeticCoderC
+mCumCount	ModelOrder0C.h	/^		unsigned int mCumCount[ 257 ];$/;"	m	class:ModelOrder0C
+mFile	ArithmeticCoderC.h	/^		fstream *mFile;$/;"	m	class:ArithmeticCoderC
+mHigh	ArithmeticCoderC.h	/^		unsigned int mHigh;$/;"	m	class:ArithmeticCoderC
+mLow	ArithmeticCoderC.h	/^		unsigned int mLow;$/;"	m	class:ArithmeticCoderC
+mScale	ArithmeticCoderC.h	/^		unsigned int mScale;$/;"	m	class:ArithmeticCoderC
+mSource	ModelI.h	/^		fstream *mSource;$/;"	m	class:ModelI
+mStep	ArithmeticCoderC.h	/^		unsigned int mStep;$/;"	m	class:ArithmeticCoderC
+mTarget	ModelI.h	/^		fstream *mTarget;$/;"	m	class:ModelI
+mTotal	ModelOrder0C.h	/^		unsigned int mTotal;$/;"	m	class:ModelOrder0C
+main	main.cpp	/^main(int argc, char *argv[])$/;"	f
+min	tools.h	/^int inline min( int a, int b )$/;"	f
