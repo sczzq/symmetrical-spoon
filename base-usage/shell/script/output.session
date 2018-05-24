@@ -1,0 +1,48 @@
+Script started on Thu 06 Apr 2017 05:16:55 PM CST
+]0;zhu@zhu:~/source/shell/script]7;file://zhu.lan/home/zhu/source/shell/script[?1034h[zhu@zhu script]$ file_igp[K[K[Kjpg="sample.jgp"
+]0;zhu@zhu:~/source/shell/script]7;file://zhu.lan/home/zhu/source/shell/script[zhu@zhu script]$ name=${file.[K_jpg%.*}
+]0;zhu@zhu:~/source/shell/script]7;file://zhu.lan/home/zhu/source/shell/script[zhu@zhu script]$ echo $name
+sample
+]0;zhu@zhu:~/source/shell/script]7;file://zhu.lan/home/zhu/source/shell/script[zhu@zhu script]$ extension=${file_jpg#*.}
+]0;zhu@zhu:~/source/shell/script]7;file://zhu.lan/home/zhu/source/shell/script[zhu@zhu script]$ echo $extension
+jgp
+]0;zhu@zhu:~/source/shell/script]7;file://zhu.lan/home/zhu/source/shell/script[zhu@zhu script]$ URL="www.google.com"
+]0;zhu@zhu:~/source/shell/script]7;file://zhu.lan/home/zhu/source/shell/script[zhu@zhu script]$ echo ${URL%.*}
+www.google
+]0;zhu@zhu:~/source/shell/script]7;file://zhu.lan/home/zhu/source/shell/script[zhu@zhu script]$ echo ${URL%%.*}
+www
+]0;zhu@zhu:~/source/shell/script]7;file://zhu.lan/home/zhu/source/shell/script[zhu@zhu script]$ echo ${URL#*.}
+google.com
+]0;zhu@zhu:~/source/shell/script]7;file://zhu.lan/home/zhu/source/shell/script[zhu@zhu script]$ echo ${URL##*.}
+com
+]0;zhu@zhu:~/source/shell/script]7;file://zhu.lan/home/zhu/source/shell/script[zhu@zhu script]$ rename *.JPG *.jj[Kpg
+rename: not enough arguments
+
+Usage:
+ rename [options] expression replacement file...
+
+Options:
+ -v, --verbose    explain what is being done
+ -s, --symlink    act on symlink target
+
+ -h, --help     display this help and exit
+ -V, --version  output version information and exit
+
+For more details see rename(1).
+]0;zhu@zhu:~/source/shell/script]7;file://zhu.lan/home/zhu/source/shell/script[zhu@zhu script]$ rename 's/ /-[K_/g' *
+]0;zhu@zhu:~/source/shell/script]7;file://zhu.lan/home/zhu/source/shell/script[zhu@zhu script]$ ls
+output.session  timing.log
+]0;zhu@zhu:~/source/shell/script]7;file://zhu.lan/home/zhu/source/shell/script[zhu@zhu script]$ rename [K[K[K[K[K[K[Ktouch TEST
+]0;zhu@zhu:~/source/shell/script]7;file://zhu.lan/home/zhu/source/shell/script[zhu@zhu script]$ rename 'y/A-Z/a-z/' *
+]0;zhu@zhu:~/source/shell/script]7;file://zhu.lan/home/zhu/source/shell/script[zhu@zhu script]$ ls
+output.session  TEST  timing.log
+]0;zhu@zhu:~/source/shell/script]7;file://zhu.lan/home/zhu/source/shell/script[zhu@zhu script]$ lsrename 'y/A-Z/a-z/' *
+]0;zhu@zhu:~/source/shell/script]7;file://zhu.lan/home/zhu/source/shell/script[zhu@zhu script]$ 
+]0;zhu@zhu:~/source/shell/script]7;file://zhu.lan/home/zhu/source/shell/script[zhu@zhu script]$ ls
+output.session  TEST  timing.log
+]0;zhu@zhu:~/source/shell/script]7;file://zhu.lan/home/zhu/source/shell/script[zhu@zhu script]$ ls /usr/share/dict/
+linux.words  [0m[38;5;51mwords[0m
+]0;zhu@zhu:~/source/shell/script]7;file://zhu.lan/home/zhu/source/shell/script[zhu@zhu script]$ exit
+exit
+
+Script done on Thu 06 Apr 2017 05:21:12 PM CST

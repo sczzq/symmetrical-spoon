@@ -1,0 +1,5 @@
+zh
+linux
+gnu
+posix
+unix

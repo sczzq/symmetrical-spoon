@@ -1,0 +1,48 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CMD_ADD	defs.h	26;"	d
+CMD_RELEASE	defs.h	27;"	d
+CMD_SEARCH	defs.h	25;"	d
+CMD_SHOW	defs.h	24;"	d
+HASFOUND	defs.h	40;"	d
+ISEQUALS	defs.h	42;"	d
+MAJOR_VERSION	defs.h	12;"	d
+MIN_VERSION	defs.h	11;"	d
+NOTEQUALS	defs.h	43;"	d
+NOTFOUND	defs.h	41;"	d
+VERSION	defs.h	14;"	d
+_COMMAND_H__	command.h	8;"	d
+_DEFS_H__	defs.h	9;"	d
+__BUFFER_H__	buffer.h	9;"	d
+autotools	defs.h	/^struct autotools{$/;"	s
+cadd	files.c	/^void cadd(void)$/;"	f
+command_add	command.c	/^void command_add(void)$/;"	f
+command_release	command.c	/^void command_release(void)$/;"	f
+command_search	command.c	/^void command_search(void)$/;"	f
+command_show	command.c	/^void command_show(void)$/;"	f
+display	display.c	/^int display(void)$/;"	f
+file	files.c	/^void file(void)$/;"	f
+get	utils.c	/^void get(void)$/;"	f
+head	defs.h	/^	struct node * head;$/;"	m	struct:list	typeref:struct:list::node
+help	utils.c	/^int help(void)$/;"	f
+insert	insert.c	/^int insert()$/;"	f
+kbd	kbd.c	/^int kbd()$/;"	f
+list	defs.h	/^struct list{$/;"	s
+longname	defs.h	/^	char *longname;$/;"	m	struct:autotools
+main	main.c	/^int main(int argc, char *argv[])$/;"	f
+name	defs.h	/^	char *name;$/;"	m	struct:autotools
+next	defs.h	/^	struct autotools * next;$/;"	m	struct:node	typeref:struct:node::autotools
+node	defs.h	/^	struct autotools * node;$/;"	m	struct:node	typeref:struct:node::autotools
+node	defs.h	/^struct node{$/;"	s
+path	defs.h	/^	char *path;$/;"	m	struct:autotools
+prev	defs.h	/^	struct autotools * prev;$/;"	m	struct:node	typeref:struct:node::autotools
+release	utils.c	/^void release(void)$/;"	f
+root	defs.h	/^struct list root;$/;"	v	typeref:struct:list
+search	search.c	/^int search(struct autotools *at)$/;"	f
+tail	defs.h	/^	struct node * tail;$/;"	m	struct:list	typeref:struct:list::node
+url	defs.h	/^	char *url;$/;"	m	struct:autotools
+version	defs.h	/^	char *version;$/;"	m	struct:autotools

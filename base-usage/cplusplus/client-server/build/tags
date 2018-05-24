@@ -1,0 +1,81 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Anomynous	connection.hpp	/^namespace Anomynous{$/;"	n
+Anomynous	custom.hpp	/^namespace Anomynous{$/;"	n
+Anomynous	message.hpp	/^		Anomynous,$/;"	m	class:Anonymous::MessageType
+Anonymous	message.hpp	/^namespace Anonymous{$/;"	n
+BUFFER_SIZE	client.cpp	28;"	d	file:
+CC	Makefile	/^CC=g++$/;"	m
+CPPFLAG	Makefile	/^CPPFLAG=-std=c++11 -lpthread$/;"	m
+Connect	message.hpp	/^		Connect,$/;"	m	class:Anonymous::MessageType
+Connection	connection.hpp	/^class Connection {$/;"	c	namespace:Anomynous
+Customer	custom.hpp	/^		Customer() {$/;"	f	class:Anomynous::Customer
+Customer	custom.hpp	/^		Customer(uint64_t id, string n){$/;"	f	class:Anomynous::Customer
+Customer	custom.hpp	/^		Customer(uint64_t t){$/;"	f	class:Anomynous::Customer
+Customer	custom.hpp	/^	class Customer{$/;"	c	namespace:Anomynous
+Disconnect	message.hpp	/^		Disconnect,$/;"	m	class:Anonymous::MessageType
+Group	custom.hpp	/^		Group() { }$/;"	f	class:Anomynous::Group
+Group	custom.hpp	/^		Group(uint64_t id, string n){$/;"	f	class:Anomynous::Group
+Group	custom.hpp	/^	class Group{$/;"	c	namespace:Anomynous
+Join	message.hpp	/^		Join,$/;"	m	class:Anonymous::MessageType
+JoinGroup	message.hpp	/^		JoinGroup,$/;"	m	class:Anonymous::MessageType
+Leave	message.hpp	/^		Leave,$/;"	m	class:Anonymous::MessageType
+ListGroups	message.hpp	/^		ListGroups,$/;"	m	class:Anonymous::MessageType
+MYPORT	client.cpp	27;"	d	file:
+Message	message.hpp	/^		Message() { }$/;"	f	class:Anonymous::Message
+Message	message.hpp	/^		Message(MessageType t, uint64_t s, uint64_t t, arrivelTime a){$/;"	f	class:Anonymous::Message
+Message	message.hpp	/^	class Message{$/;"	c	namespace:Anonymous
+MessageStatus	message.hpp	/^	enum class MessageStatus{$/;"	c	namespace:Anonymous
+MessageType	message.hpp	/^	enum class MessageType{$/;"	c	namespace:Anonymous
+PORT	server.cpp	28;"	d	file:
+Post	message.hpp	/^		Post, \/\/ receive group's message sended from another member in group.$/;"	m	class:Anonymous::MessageType
+QUEUE	server.cpp	29;"	d	file:
+QueryCustom	message.hpp	/^		QueryCustom,$/;"	m	class:Anonymous::MessageType
+RegisterCustom	message.hpp	/^		RegisterCustom,$/;"	m	class:Anonymous::MessageType
+Send	message.hpp	/^		Send, \/\/ send to all members in group.$/;"	m	class:Anonymous::MessageType
+SendToCustom	message.hpp	/^		SendToCustom,$/;"	m	class:Anonymous::MessageType
+SendedByAnother	message.hpp	/^		SendedByAnother,$/;"	m	class:Anonymous::MessageType
+_CONNECTION_H_	connection.hpp	2;"	d
+_CUSTOM_HPP_	custom.hpp	9;"	d
+_MESSAGE_H__	message.hpp	9;"	d
+at	message.hpp	/^		uint64_t at; \/\/ arrive time.$/;"	m	class:Anonymous::Message
+ccs	custom.hpp	/^		vector<Connection> ccs;$/;"	m	class:Anomynous::Group
+client	Makefile	/^client = client$/;"	m
+clientg	Makefile	/^clientg = clientdebug$/;"	m
+connection	custom.hpp	/^		Connection connection;$/;"	m	class:Anomynous::Customer
+customNumber	custom.hpp	/^		uint64_t customNumber;$/;"	m	class:Anomynous::Group
+customs	custom.hpp	/^		vector<uint64_t> customs;$/;"	m	class:Anomynous::Group
+deal	message.hpp	/^		int deal(void)$/;"	f	class:Anonymous::Message
+exited	client.cpp	/^int exited = 0;$/;"	v
+get_connect	server.cpp	/^void get_connect(int sock_fd)$/;"	f
+gid	custom.hpp	/^		uint64_t gid;$/;"	m	class:Anomynous::Group
+groups	custom.hpp	/^		vector<uint64_t> groups;$/;"	m	class:Anomynous::Customer
+iid	server.cpp	/^vector<uint64_t> iid;$/;"	v
+ip	connection.hpp	/^	uint32_t ip;$/;"	m	class:Anomynous::Connection
+main	client.cpp	/^int main()$/;"	f
+main	server.cpp	/^int main() {$/;"	f
+my_send	client.cpp	/^void my_send(int sock_fd)$/;"	f
+name	custom.hpp	/^		string name;$/;"	m	class:Anomynous::Group
+port	connection.hpp	/^	uint32_t port;$/;"	m	class:Anomynous::Connection
+postTime	message.hpp	/^		uint64_t postTime;$/;"	m	class:Anonymous::Message
+receive	client.cpp	/^void receive(int sock_fd)$/;"	f
+receive	server.cpp	/^void receive(int sock_fd)$/;"	f
+registerTime	custom.hpp	/^		uint64_t registerTime;$/;"	m	class:Anomynous::Group
+sendedNotAll	message.hpp	/^		sendedNotAll,$/;"	m	class:Anonymous::MessageStatus
+sendedOK	message.hpp	/^		sendedOK,$/;"	m	class:Anonymous::MessageStatus
+sendedWrong	message.hpp	/^		sendedWrong,$/;"	m	class:Anonymous::MessageStatus
+server	Makefile	/^server = server$/;"	m
+serverg	Makefile	/^serverg = serverdebug$/;"	m
+socks	server.cpp	/^vector<int> socks;$/;"	v
+source	message.hpp	/^		uint64_t source; \/\/ custom id.$/;"	m	class:Anonymous::Message
+srcsuffix	Makefile	/^srcsuffix=cpp$/;"	m
+target	message.hpp	/^		uint64_t target; \/\/ custom id or group id.$/;"	m	class:Anonymous::Message
+toString	custom.hpp	/^		string toString(void){$/;"	f	class:Anomynous::Customer
+toString	message.hpp	/^		string toString(void){$/;"	f	class:Anonymous::Message
+unsended	message.hpp	/^		unsended = 1,$/;"	m	class:Anonymous::MessageStatus
+~Customer	custom.hpp	/^		~Customer() { }$/;"	f	class:Anomynous::Customer
+~Message	message.hpp	/^		~Message() { }$/;"	f	class:Anonymous::Message

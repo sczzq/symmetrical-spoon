@@ -1,0 +1,6 @@
+this is the changed text
+line2
+line4
+line5
+happy hacking!
+GNU is not UNIX

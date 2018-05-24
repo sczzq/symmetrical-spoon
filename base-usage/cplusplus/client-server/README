@@ -1,0 +1,11 @@
+
+client_v1.cpp (copy from test_client3.cpp)
+server_v1.cpp (copy from test_server3.cpp)
+Function:
+server can receive connection from multi-client, and client can send/recv from server.
+
+Bug: server coredump unexpected, cause by something, but donot know here.
+
+Issue: server uses one process, and, no logic about someone to send if have multi-clients.
+
+

@@ -1,0 +1,98 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AddItem	tree.c	/^bool AddItem(const Item * pi, Tree *ptree)$/;"	f
+AddNode	tree.c	/^static void AddNode(Node * new_node, Node * root)$/;"	f	file:
+CopyToItem	queue.c	/^static void CopyToItem(Node *pn, Item *pi)$/;"	f	file:
+CopyToNode	queue.c	/^static void CopyToNode(Item item, Node *pn)$/;"	f	file:
+DeQueue	queue.c	/^bool DeQueue(Item *pitem, Queue *pg)$/;"	f
+DeleteAll	tree.c	/^void DeleteAll(Tree * ptree)$/;"	f
+DeleteAllNodes	tree.c	/^static void DeleteAllNodes(Node * root)$/;"	f	file:
+DeleteItem	tree.c	/^bool DeleteItem(const Item * pi, Tree * ptree)$/;"	f
+DeleteNode	tree.c	/^static void DeleteNode(Node ** ptr)$/;"	f	file:
+EmptyTheQueue	queue.c	/^void EmptyTheQueue(Queue *pg)$/;"	f
+EnQueue	queue.c	/^bool EnQueue(Item item, Queue * pg)$/;"	f
+HELP	11.c	107;"	d	file:
+InOrder	tree.c	/^static void InOrder(const Node * root, void (* pfun)(Item item))$/;"	f	file:
+InTree	tree.c	/^bool InTree(const Item * pi, const Tree * ptree)$/;"	f
+InitializeQueue	queue.c	/^void InitializeQueue(Queue * pg)$/;"	f
+InitializeTree	tree.c	/^void InitializeTree(Tree * ptree)$/;"	f
+Item	queue.h	/^typedef int Item;$/;"	t
+Item	queue.h	/^} Item;$/;"	t	typeref:struct:item
+Item	tree.h	/^} Item;$/;"	t	typeref:struct:item
+LENGTH	11.c	106;"	d	file:
+MAXITEMS	tree.h	12;"	d
+MAXQUEUE	queue.h	18;"	d
+MIN_PER_HR	mall.c	7;"	d	file:
+MakeNode	tree.c	/^static Node * MakeNode(const Item * pi)$/;"	f	file:
+N	11.c	105;"	d	file:
+Node	queue.h	/^} Node;$/;"	t	typeref:struct:node
+Node	tree.h	/^}Node;$/;"	t	typeref:struct:node
+Pair	tree.c	/^} Pair;$/;"	t	typeref:struct:pair	file:
+Queue	queue.h	/^} Queue;$/;"	t	typeref:struct:queue
+QueueIsEmpty	queue.c	/^bool QueueIsEmpty(const Queue * pg)$/;"	f
+QueueIsFull	queue.c	/^bool QueueIsFull(const Queue *pg)$/;"	f
+QueueItemCount	queue.c	/^int QueueItemCount(const Queue * pg)$/;"	f
+SeekItem	tree.c	/^static Pair SeekItem(const Item * pi, const Tree * ptree)$/;"	f	file:
+ToLeft	tree.c	/^static bool ToLeft(const Item * i1, const Item * i2)$/;"	f	file:
+ToRight	tree.c	/^static bool ToRight(const Item * i1, const Item * i2)$/;"	f	file:
+Traverse	tree.c	/^void Traverse(const Tree * ptree, void (* pfun)(Item item))$/;"	f
+Tree	tree.h	/^} Tree;$/;"	t	typeref:struct:tree
+TreeIsEmpty	tree.c	/^bool TreeIsEmpty(const Tree * ptree)$/;"	f
+TreeIsFull	tree.c	/^bool TreeIsFull(const Tree * ptree)$/;"	f
+TreeItemCount	tree.c	/^int TreeItemCount(const Tree *ptree)$/;"	f
+_PRIMER_H_	primer.h	2;"	d
+__QUEUE_H_	queue.h	4;"	d
+__TREE_H_	tree.h	4;"	d
+addpet	use_tree.c	/^void addpet(Tree * pt)$/;"	f
+arrive	queue.h	/^	long arrive;     \/* time of adding of a customer *\/$/;"	m	struct:item
+charsearch	11.c	/^int charsearch(char c, const char *s)$/;"	f
+child	tree.c	/^	Node *child;$/;"	m	struct:pair	file:
+customertime	mall.c	/^Item customertime(long when)$/;"	f
+droppet	use_tree.c	/^void droppet(Tree * pt)$/;"	f
+findpet	use_tree.c	/^void findpet(const Tree * pt)$/;"	f
+front	queue.h	/^	Node * front; \/* pointing to header of queue *\/$/;"	m	struct:queue
+getnc	11.c	/^int getnc(char *array, int n)$/;"	f
+getnchar	11.c	/^char *getnchar(char *array, int n)$/;"	f
+getstr	11.c	/^char *getstr(char *array)$/;"	f
+item	queue.h	/^	Item item;$/;"	m	struct:node
+item	queue.h	/^typedef struct item$/;"	s
+item	tree.h	/^	Item item;$/;"	m	struct:node
+item	tree.h	/^typedef struct item{$/;"	s
+items	queue.h	/^	int items;   \/* item's number in queue *\/$/;"	m	struct:queue
+left	tree.h	/^	struct node * left;$/;"	m	struct:node	typeref:struct:node::node
+main	mall.c	/^int main(void)$/;"	f
+main	test.c	/^int main(int argc, char *argv[])$/;"	f
+main	use_queue.c	/^int main(void)$/;"	f
+main	use_tree.c	/^int main(void)$/;"	f
+menu	use_tree.c	/^char menu(void)$/;"	f
+newcustomer	mall.c	/^bool newcustomer(double x)$/;"	f
+next	queue.h	/^	struct node *next;$/;"	m	struct:node	typeref:struct:node::node
+node	queue.h	/^typedef struct node$/;"	s
+node	tree.h	/^typedef struct node{$/;"	s
+pair	tree.c	/^typedef struct pair{$/;"	s	file:
+parent	tree.c	/^	Node *parent;$/;"	m	struct:pair	file:
+petkind	tree.h	/^	char petkind[20];$/;"	m	struct:item
+petname	tree.h	/^	char petname[20];$/;"	m	struct:item
+printitem	use_tree.c	/^void printitem(Item item)$/;"	f
+processtime	queue.h	/^	int processtime; \/* inquery time of the customer *\/$/;"	m	struct:item
+queue	queue.h	/^typedef struct queue$/;"	s
+rear	queue.h	/^	Node * rear;  \/* pointing to rear of queue *\/$/;"	m	struct:queue
+right	tree.h	/^	struct node * right;$/;"	m	struct:node	typeref:struct:node::node
+root	tree.h	/^	Node * root;$/;"	m	struct:tree
+show	11.c	/^void show(void)$/;"	f
+show_1	11.c	/^void show_1()$/;"	f
+show_2	11.c	/^void show_2()$/;"	f
+show_3	11.c	/^void show_3()$/;"	f
+show_4	11.c	/^void show_4()$/;"	f
+show_5	11.c	/^void show_5()$/;"	f
+showpets	use_tree.c	/^void showpets(const Tree * pt)$/;"	f
+size	tree.h	/^	int size;$/;"	m	struct:tree
+stringreverse	11.c	/^int stringreverse(char *s)$/;"	f
+strsearch	11.c	/^char *strsearch(char *deck, char *target)$/;"	f
+test_FILE	12.c	/^int test_FILE(void)$/;"	f
+tree	tree.h	/^typedef struct tree{$/;"	s
+uppercase	use_tree.c	/^void uppercase(char *str)$/;"	f

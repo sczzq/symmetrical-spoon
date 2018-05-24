@@ -1,0 +1,9 @@
+This is file to test awk programming language.
+Second line, OK
+This is to fuuuuu to sky or mountains.
+Towords is not words, and it's so buuu.
+Next sunshine will come.
+http://192.168.1.1:8010/home/test/foo.php/download.ts?from=120-120&to=211-222
+ok
+that's end.
+

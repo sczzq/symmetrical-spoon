@@ -1,0 +1,24 @@
+1, 生成1000*1000*10，即一千万个随机整数，
+	随机数生成器：
+		随机数引擎：选用default_random_engine 和 mt19937，
+		mt19937:
+			real	0m17.191s
+			user	0m17.188s
+			sys	0m0.001s
+		default_random_engine:
+			real	0m14.957s
+			user	0m14.952s
+			sys	0m0.004s
+		随机数分布：选用uniform_int_distribution，
+	数据结构：
+		集合：
+			有序集合：不需要有序，只需要判断是否存在即可
+			无序集合：测试
+		数组：
+			测试
+		结果：使用数组进行标记是这三种效率最高的。
+			集合需要计算hash函数，每一生成的随机数都需要进行hash函数计算，极大浪费。
+
+	文件 testRandom.cpp
+
+

@@ -1,0 +1,64 @@
+
+# using implicit rules
+# using read-only prerequestise -- if objdir timestamp is changed, donot remake.
+# using *.c wildchar function.
+# 
+# test recipe that transport to shell
+#
+# using .PHONY target in sub-make 
+#
+#obj = main.o kbd.o command.o display.o \
+	       insert.o search.o files.o utils.o
+
+CFLAGS := -fprofile-arcs -ftest-coverage
+
+obj := $(patsubst %.c,%.o,$(wildcard *.c))
+
+OBJDIR := objdir
+#OBJS := $(addprefix $(OBJDIR)/,${obj})
+
+OBJS := ${obj}
+
+edit : ${OBJS}
+	cc ${CFLAGS} $^ -o $@
+
+$(OBJDIR)/%.o : %.c
+	$(COMPILE.c) ${CFLAGS} $(OUTPUT_OPTION) $<
+
+#all: $(OBJS)
+
+$(OBJS): | $(OBJDIR)
+
+$(OBJDIR):
+	mkdir $(OBJDIR)
+	   
+
+.PHONY: clean print echo
+
+# recipe will not print before or after its execution.
+.SILENT: clean
+
+clean :
+	rm edit ${OBJS}
+
+# here something error, donot work rightly.
+print: $(wildcard *.c)
+	lpr -p $?
+	touch print
+
+echo : 
+	echo 'hello \
+		whole'; echo "hello \
+		world"
+
+SUBDIRS = foo bar baz
+.PHONY : subdirs $(SUBDIRS)
+
+subdirs : $(SUBDIRS)
+
+$(SUBDIRS):
+	$(MAKE) -C $@
+
+foo : baz
+
+

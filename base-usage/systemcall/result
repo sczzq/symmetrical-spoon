@@ -1,0 +1,1287 @@
+file test.txt size is 5242881
+total write size is 0
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 16384
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 32768
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 49152
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 65536
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 81920
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 98304
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 114688
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 131072
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 147456
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 163840
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 180224
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 196608
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 212992
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 229376
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 245760
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 262144
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 278528
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 294912
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 311296
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 327680
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 344064
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 360448
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 376832
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 393216
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 409600
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 425984
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 442368
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 458752
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 475136
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 491520
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 507904
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 524288
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 540672
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 557056
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 573440
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 589824
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 606208
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 622592
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 638976
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 655360
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 671744
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 688128
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 704512
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 720896
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 737280
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 753664
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 770048
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 786432
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 802816
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 819200
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 835584
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 851968
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 868352
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 884736
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 901120
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 917504
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 933888
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 950272
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 966656
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 983040
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 999424
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1015808
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1032192
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1048576
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1064960
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1081344
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1097728
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1114112
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1130496
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1146880
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1163264
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1179648
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1196032
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1212416
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1228800
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1245184
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1261568
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1277952
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1294336
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1310720
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1327104
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1343488
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1359872
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1376256
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1392640
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1409024
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1425408
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1441792
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1458176
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1474560
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1490944
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1507328
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1523712
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1540096
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1556480
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1572864
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1589248
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1605632
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1622016
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1638400
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1654784
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1671168
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1687552
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1703936
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1720320
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1736704
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1753088
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1769472
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1785856
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1802240
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1818624
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1835008
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1851392
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1867776
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1884160
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1900544
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1916928
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1933312
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1949696
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1966080
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1982464
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 1998848
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2015232
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2031616
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2048000
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2064384
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2080768
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2097152
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2113536
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2129920
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2146304
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2162688
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2179072
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2195456
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2211840
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2228224
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2244608
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2260992
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2277376
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2293760
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2310144
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2326528
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2342912
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2359296
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2375680
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2392064
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2408448
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2424832
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2441216
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2457600
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2473984
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2490368
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2506752
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2523136
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2539520
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2555904
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2572288
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2588672
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2605056
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2621440
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2637824
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2654208
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2670592
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2686976
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2703360
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2719744
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2736128
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2752512
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2768896
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2785280
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2801664
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2818048
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2834432
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2850816
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2867200
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2883584
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2899968
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2916352
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2932736
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2949120
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2965504
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2981888
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 2998272
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3014656
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3031040
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3047424
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3063808
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3080192
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3096576
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3112960
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3129344
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3145728
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3162112
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3178496
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3194880
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3211264
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3227648
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3244032
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3260416
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3276800
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3293184
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3309568
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3325952
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3342336
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3358720
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3375104
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3391488
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3407872
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3424256
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3440640
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3457024
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3473408
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3489792
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3506176
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3522560
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3538944
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3555328
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3571712
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3588096
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3604480
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3620864
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3637248
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3653632
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3670016
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3686400
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3702784
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3719168
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3735552
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3751936
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3768320
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3784704
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3801088
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3817472
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3833856
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3850240
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3866624
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3883008
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3899392
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3915776
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3932160
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3948544
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3964928
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3981312
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 3997696
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4014080
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4030464
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4046848
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4063232
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4079616
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4096000
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4112384
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4128768
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4145152
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4161536
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4177920
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4194304
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4210688
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4227072
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4243456
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4259840
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4276224
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4292608
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4308992
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4325376
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4341760
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4358144
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4374528
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4390912
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4407296
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4423680
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4440064
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4456448
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4472832
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4489216
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4505600
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4521984
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4538368
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4554752
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4571136
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4587520
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4603904
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4620288
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4636672
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4653056
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4669440
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4685824
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4702208
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4718592
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4734976
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4751360
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4767744
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4784128
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4800512
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4816896
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4833280
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4849664
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4866048
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4882432
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4898816
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4915200
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4931584
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4947968
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4964352
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4980736
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 4997120
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 5013504
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 5029888
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 5046272
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 5062656
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 5079040
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 5095424
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 5111808
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 5128192
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 5144576
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 5160960
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 5177344
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 5193728
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 5210112
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 5226496
+EPOLLIN	read 16384 bytes from socket 3
+read 16384 bytes from file test.txt
+write 16384 bytes to socket 3
+total write size is 5242880
+EPOLLIN	read 16384 bytes from socket 3
+read 1 bytes from file test.txt
+write 1 bytes to socket 3
+write whole file, change events
+write whole file, exit
+total write size is 5242881

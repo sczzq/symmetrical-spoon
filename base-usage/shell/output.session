@@ -1,0 +1,109 @@
+Script started on Thu 06 Apr 2017 11:36:32 AM CST
+]0;zhu@zhu:~/source/shell]7;file://zhu.lan/home/zhu/source/shell[?1034h[zhu@zhu shell]$ caa[Kt -s line[K[K[K[Kmulti_blanks 
+line1
+
+line2
+
+line3
+
+line4
+]0;zhu@zhu:~/source/shell]7;file://zhu.lan/home/zhu/source/shell[zhu@zhu shell]$ cat multi_blanks 
+line1
+
+
+
+
+
+line2
+
+
+
+
+line3
+
+
+
+
+
+
+line4
+]0;zhu@zhu:~/source/shell]7;file://zhu.lan/home/zhu/source/shell[zhu@zhu shell]$ cat -n -s multi_blanks 
+     1	line1
+     2	
+     3	line2
+     4	
+     5	line3
+     6	
+     7	line4
+]0;zhu@zhu:~/source/shell]7;file://zhu.lan/home/zhu/source/shell[zhu@zhu shell]$ cat -n l[Kmuliti[K[K[Kti_blanks 
+     1	line1
+     2	
+     3	
+     4	
+     5	
+     6	
+     7	line2
+     8	
+     9	
+    10	
+    11	
+    12	line3
+    13	
+    14	
+    15	
+    16	
+    17	
+    18	
+    19	line4
+]0;zhu@zhu:~/source/shell]7;file://zhu.lan/home/zhu/source/shell[zhu@zhu shell]$ scriptrepal[K[Klay timing.log output.session
+
+]0;zhu@zhu:~/source/shell]7;file://zhu.lan/home/zhu/source/shell[zhu@zhu shell]$ exit
+exit
+
+Script done on Thu 06 Apr 2017 11:37:58 AM CST
+Script started on Thu 06 Apr 2017 11:38:04 AM CST
+]0;zhu@zhu:~/source/shell]7;file://zhu.lan/home/zhu/source/shell[?1034h[zhu@zhu shell]$ exit
+exit
+
+Script done on Thu 06 Apr 2017 11:38:09 AM CST
+Script started on Thu 06 Apr 2017 11:38:14 AM CST
+]0;zhu@zhu:~/source/shell]7;file://zhu.lan/home/zhu/source/shell[?1034h[zhu@zhu shell]$ cat -n multi_blanks 
+     1	line1
+     2	
+     3	
+     4	
+     5	
+     6	
+     7	line2
+     8	
+     9	
+    10	
+    11	
+    12	line3
+    13	
+    14	
+    15	
+    16	
+    17	
+    18	
+    19	line4
+]0;zhu@zhu:~/source/shell]7;file://zhu.lan/home/zhu/source/shell[zhu@zhu shell]$ cat -n -s muti[K[Klti_blanks 
+     1	line1
+     2	
+     3	line2
+     4	
+     5	line3
+     6	
+     7	line4
+]0;zhu@zhu:~/source/shell]7;file://zhu.lan/home/zhu/source/shell[zhu@zhu shell]$ cat -s muti[Klti[K[K[K[Klti_blanks 
+line1
+
+line2
+
+line3
+
+line4
+]0;zhu@zhu:~/source/shell]7;file://zhu.lan/home/zhu/source/shell[zhu@zhu shell]$ [H[2J[zhu@zhu shell]$ exit
+exit
+
+Script done on Thu 06 Apr 2017 11:38:35 AM CST

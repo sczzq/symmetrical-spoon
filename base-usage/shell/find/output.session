@@ -1,0 +1,281 @@
+Script started on Thu 06 Apr 2017 11:50:02 AM CST
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[?1034h[zhu@zhu find]$ find.[K . -name '[K"*.txt" -print
+./example.txt
+./EXAMPLE.txt
+./file.txt
+./mountain/file.txt
+./new.txt
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find .-[K -n[Kiname "example*" -print
+./example.txt
+./EXAMPLE.txt
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find.[K .-[K -print
+.
+./example.txt
+./EXAMPLE.txt
+./file.txt
+./mountain
+./mountain/file.txt
+./new.txt
+./some.jpg
+./text.pdf
+./new.py
+./next.jpg
+./test.py
+./timing.log
+./output.session
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find .
+.
+./example.txt
+./EXAMPLE.txt
+./file.txt
+./mountain
+./mountain/file.txt
+./new.txt
+./some.jpg
+./text.pdf
+./new.py
+./next.jpg
+./test.py
+./timing.log
+./output.session
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . \( -name "*.txt" -o -name "*.pdf" \) -print
+./example.txt
+./EXAMPLE.txt
+./file.txt
+./mountain/file.txt
+./new.txt
+./text.pdf
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -path "*?[K>[K?[K/mountain/*" -print
+./mountain/file.txt
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -regex "*.[K[K.*\(.py|[K\|\.sh\)$"
+./new.py
+./test.py
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ touch test.sh
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ touch test.shfind . -regex ".*\(.py\|\.sh\)$"
+./new.py
+./test.py
+./test.sh
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -iree[Kgex ".*\(\.py|=[K[K\|.[K\.sh)$"
+find: Unmatched ( or \(
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -iregex ".*\(\.py\|\.sh)$"\)$"
+./new.py
+./test.py
+./test.sh
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -regex "*[K.*(.py|.sh)$"
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -regex ".*(.py|.sh)$"[C\.py|.sh)$"[C[C[C[C\.sh)$"
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -regex ".*(\.py|\.sh)$"\(\.py|\.sh)$"[C[C[C[C[C[C[C[C[C[C\)$"
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -regex ".*\(\.py|\.sh\)$"[C[C\|\.sh\)$"
+./new.py
+./test.py
+./test.sh
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -maxdepth 1 -name "f*" -print
+./file.txt
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ touch mon[Kuntain/depth/depth/file.txt -p
+touch: invalid option -- 'p'
+Try 'touch --help' for more information.
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ touch mountain/depth/depth/file.txt -p[K[K[K
+touch: cannot touch ‘mountain/depth/depth/file.txt’: No such file or directory
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ touch mountain/depth/depth/file.txt -r
+touch: option requires an argument -- 'r'
+Try 'touch --help' for more information.
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ tout[Kch mountain/depth
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ d[Ktouch [K[K[K[K[K[Kmkdir d[Kmountain/se[Khe[K[K[Kmangmoun
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ mkdir mountta[K[Kain/baijiashan/
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ touch mountain/mangmoun/file.txt
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ touch mountain/bi[Kaijiashan/t[Kfile.txt
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ touch mountain/file.txt 
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ mkdir mountain/mang[K[K[K[Kbaijiashan/hegoujian
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ tout[K[K[K[Ktouch mountain/baijiashan/d[Khegoujian/file.xt[K[Kxt[K[Ktxt
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -name[K[K[K[Kmaxp[Kdepth 1 -name "f*" -print
+./file.txt
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -name [K[K[K[K[Kmaxdepth 2 -name "f*" -print
+./file.txt
+./mountain/file.txt
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find.[K . -mm[Kaxdepth 3 -name "f*" -print
+./file.txt
+./mountain/file.txt
+./mountain/mangmoun/file.txt
+./mountain/baijiashan/file.txt
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -mawx[K[Kxdepth 3[K4 -name "f*" -print
+./file.txt
+./mountain/file.txt
+./mountain/mangmoun/file.txt
+./mountain/baijiashan/file.txt
+./mountain/baijiashan/hegoujian/file.txt
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -n[Kmaxdepth 5 -name "f*" -print
+./file.txt
+./mountain/file.txt
+./mountain/mangmoun/file.txt
+./mountain/baijiashan/file.txt
+./mountain/baijiashan/hegoujian/file.txt
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -mmin[K[K[Kindepth 2 -name "f*" -print
+./mountain/file.txt
+./mountain/mangmoun/file.txt
+./mountain/baijiashan/file.txt
+./mountain/baijiashan/hegoujian/file.txt
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -mingdepth[K[K[K[K[K[Kdepgth[K[K[Kg[Kth 3 -name "f*" -print
+./mountain/mangmoun/file.txt
+./mountain/baijiashan/file.txt
+./mountain/baijiashan/hegoujian/file.txt
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -minmax[K[K[Kdepth 4 -name "f*" 
+./mountain/baijiashan/hegoujian/file.txt
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -type d pri[K[K[K[K -print
+.
+./mountain
+./mountain/mangmoun
+./mountain/baijiashan
+./mountain/baijiashan/hegoujian
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -type f -print
+./example.txt
+./EXAMPLE.txt
+./file.txt
+./mountain/file.txt
+./mountain/depth
+./mountain/mangmoun/file.txt
+./mountain/baijiashan/file.txt
+./mountain/baijiashan/hegoujian/file.txt
+./new.txt
+./some.jpg
+./text.pdf
+./new.py
+./next.jpg
+./test.py
+./timing.log
+./output.session
+./test.sh
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -type l -print
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -type s -print
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -type c -pir[K[Krint
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -type p -print
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -type f -atime -7 -print
+./example.txt
+./EXAMPLE.txt
+./file.txt
+./mountain/file.txt
+./mountain/depth
+./mountain/mangmoun/file.txt
+./mountain/baijiashan/file.txt
+./mountain/baijiashan/hegoujian/file.txt
+./new.txt
+./some.jpg
+./text.pdf
+./new.py
+./next.jpg
+./test.py
+./timing.log
+./output.session
+./test.sh
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -type f -atime 7 -r[Kprint
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -type f -atime +7 -print
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -type f -amin +7 -print
+./example.txt
+./EXAMPLE.txt
+./file.txt
+./new.txt
+./some.jpg
+./text.pdf
+./new.py
+./next.jpg
+./test.py
+./timing.log
+./output.session
+./test.sh
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -type f -amin -7 -print
+./mountain/file.txt
+./mountain/depth
+./mountain/mangmoun/file.txt
+./mountain/baijiashan/file.txt
+./mountain/baijiashan/hegoujian/file.txt
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -type f -newer file.txt -print
+./mountain/file.txt
+./mountain/depth
+./mountain/mangmoun/file.txt
+./mountain/baijiashan/file.txt
+./mountain/baijiashan/hegoujian/file.txt
+./new.txt
+./some.jpg
+./text.pdf
+./new.py
+./next.jpg
+./test.py
+./timing.log
+./output.session
+./test.sh
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -type f -size =2k[K[K[K+2k
+./timing.log
+./output.session
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -type f -size -2K
+find: invalid -size type `K'
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -type f -size -2K[Kk
+./example.txt
+./EXAMPLE.txt
+./file.txt
+./mountain/file.txt
+./mountain/depth
+./mountain/mangmoun/file.txt
+./mountain/baijiashan/file.txt
+./mountain/baijiashan/hegoujian/file.txt
+./new.txt
+./some.jpg
+./text.pdf
+./new.py
+./next.jpg
+./test.py
+./test.sh
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ tinf[K[K[K[Kfind . -type f -name "*.swp" -delete
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -tp[K[Ktype -[Kf -name "*.pdf" -delete
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -type f -name "*.pdf"
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -type f -perm 644
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -type f -perm 644[K[K[K755
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ ls -l
+total 24
+-rw-rw-r--. 1 zhu zhu     0 Apr  6 11:47 example.txt
+-rw-rw-r--. 1 zhu zhu     0 Apr  6 11:48 EXAMPLE.txt
+-rw-rw-r--. 1 zhu zhu     0 Apr  6 11:48 file.txt
+drwxrwxr-x. 4 zhu zhu    65 Apr  6 11:54 [0m[38;5;27mmountain[0m
+-rw-rw-r--. 1 zhu zhu     0 Apr  6 11:49 new.py
+-rw-rw-r--. 1 zhu zhu     0 Apr  6 11:49 new.txt
+-rw-rw-r--. 1 zhu zhu     0 Apr  6 11:49 [38;5;13mnext.jpg[0m
+-rw-rw-r--. 1 zhu zhu  8192 Apr  6 11:58 output.session
+-rw-rw-r--. 1 zhu zhu     0 Apr  6 11:49 [38;5;13msome.jpg[0m
+-rw-rw-r--. 1 zhu zhu     0 Apr  6 11:49 test.py
+-rw-rw-r--. 1 zhu zhu     0 Apr  6 11:52 test.sh
+-rw-rw-r--. 1 zhu zhu 16384 Apr  6 11:59 timing.log
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ ls -lfind . -type f -perm 755[C[K[K[K664
+./example.txt
+./EXAMPLE.txt
+./file.txt
+./mountain/file.txt
+./mountain/depth
+./mountain/mangmoun/file.txt
+./mountain/baijiashan/file.txt
+./mountain/baijiashan/hegoujian/file.txt
+./new.txt
+./some.jpg
+./new.py
+./next.jpg
+./test.py
+./timing.log
+./output.session
+./test.sh
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ find . -type f -user zhu -print
+./example.txt
+./EXAMPLE.txt
+./file.txt
+./mountain/file.txt
+./mountain/depth
+./mountain/mangmoun/file.txt
+./mountain/baijiashan/file.txt
+./mountain/baijiashan/hegoujian/file.txt
+./new.txt
+./some.jpg
+./new.py
+./next.jpg
+./test.py
+./timing.log
+./output.session
+./test.sh
+]0;zhu@zhu:~/source/shell/find]7;file://zhu.lan/home/zhu/source/shell/find[zhu@zhu find]$ exit
+exit
+
+Script done on Thu 06 Apr 2017 12:02:44 PM CST

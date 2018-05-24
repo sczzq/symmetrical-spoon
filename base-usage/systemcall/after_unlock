@@ -1,0 +1,64 @@
+create consumer #0, pid -2042132736
+create productor #0, pid -2050525440
+after write: 1 2 3 4 5 6 7 8 
+after write, start: 0, end: 8, buf_size: 8
+after write: 1 2 3 4 5 6 7 8 1 2 3 4 5 6 7 
+after write, start: 0, end: 15, buf_size: 15
+after read: 1 2 3 4 5 6 7 
+after read, start: 8, end: 15, buf_size: 7
+after read: 
+after read, start: 15, end: 15, buf_size: 0
+after write: 1 2 3 4 5 6 
+after write, start: 15, end: 4, buf_size: 6
+after write: 1 2 3 4 5 6 1 2 3 4 5 
+after write, start: 15, end: 9, buf_size: 11
+after write: 1 2 3 4 5 6 1 2 3 4 5 1 2 3 4 
+after write, start: 15, end: 13, buf_size: 15
+after read: 1 2 3 4 5 1 2 3 4 
+after read, start: 4, end: 13, buf_size: 9
+after read: 1 2 3 4 
+after read, start: 9, end: 13, buf_size: 4
+after read: 
+after read, start: 13, end: 13, buf_size: 0
+after write: 1 2 3 
+after write, start: 13, end: 16, buf_size: 3
+after write: 1 2 3 1 2 
+after write, start: 13, end: 1, buf_size: 5
+after write: 1 2 3 1 2 1 
+after write, start: 13, end: 2, buf_size: 6
+after write: 1 2 3 1 2 1 1 2 3 4 5 6 7 8 
+after write, start: 13, end: 10, buf_size: 14
+after read: 1 2 1 1 2 3 4 5 6 7 8 
+after read, start: 16, end: 10, buf_size: 11
+after read: 1 1 2 3 4 5 6 7 8 
+after read, start: 1, end: 10, buf_size: 9
+after read: 1 2 3 4 5 6 7 8 
+after read, start: 2, end: 10, buf_size: 8
+after read: 
+after read, start: 10, end: 10, buf_size: 0
+after write: 1 2 3 4 5 6 7 
+after write, start: 10, end: 0, buf_size: 7
+after write: 1 2 3 4 5 6 7 1 2 3 4 5 6 
+after write, start: 10, end: 6, buf_size: 13
+after read: 1 2 3 4 5 6 
+after read, start: 0, end: 6, buf_size: 6
+after read: 
+after read, start: 6, end: 6, buf_size: 0
+after write: 1 2 3 4 5 
+after write, start: 6, end: 11, buf_size: 5
+after write: 1 2 3 4 5 1 2 3 4 
+after write, start: 6, end: 15, buf_size: 9
+after write: 1 2 3 4 5 1 2 3 4 1 2 3 
+after write, start: 6, end: 1, buf_size: 12
+after write: 1 2 3 4 5 1 2 3 4 1 2 3 1 2 
+after write, start: 6, end: 3, buf_size: 14
+productor 1 140572229072640 exit
+after read: 1 2 3 4 1 2 3 1 2 
+after read, start: 11, end: 3, buf_size: 9
+after read: 1 2 3 1 2 
+after read, start: 15, end: 3, buf_size: 5
+after read: 1 2 
+after read, start: 1, end: 3, buf_size: 2
+after read: 
+after read, start: 3, end: 3, buf_size: 0
+consumer 0 140572237465344 exit

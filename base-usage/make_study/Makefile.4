@@ -1,0 +1,34 @@
+
+# using implicit rules
+# using read-only prerequestise -- if objdir timestamp is changed, donot remake.
+#
+obj = main.o kbd.o command.o display.o \
+	       insert.o search.o files.o utils.o
+
+OBJDIR := objdir
+OBJS := $(addprefix $(OBJDIR)/,${obj})
+
+edit : ${OBJS}
+	cc $^ -o $@
+
+$(OBJDIR)/%.o : %.c
+	$(COMPILE.c) $(OUTPUT_OPTION) $<
+
+#all: $(OBJS)
+
+$(OBJS): | $(OBJDIR)
+
+$(OBJDIR):
+	mkdir $(OBJDIR)
+	   
+
+.PHONY: clean print
+
+clean :
+	rm edit ${obj}
+
+# here something error, donot work rightly.
+print: *.c
+	lpr -p $?
+	touch print
+
