@@ -140,7 +140,7 @@ int test()
 
 /*
  * 测试 std::list 是否会出现 test() 的情况.
- * list.front() 无边界检查, 不会抛出异常, 而会出现段错误.
+ * list.front() 无边界检查, 不会抛出异常.
  */
 int test2()
 {
