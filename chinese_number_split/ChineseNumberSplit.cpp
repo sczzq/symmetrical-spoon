@@ -1,92 +1,58 @@
 
+#include "ChineseNumberSplit.h"
+
 #include <string>
 #include <vector>
 #include <iostream>
-#include <map>
-#include <regex.h>
-#include <sys/types.h>
-#include <algorithm>
 #include <fstream>
+#include <map>
+#include <algorithm>
 
+// 每个汉字长度
+#define ONE_CHAR_LENGTH 3
 
 using namespace std;
 
-class Tracer {
-    public:
-    Tracer(const string fun): f(fun) {
-        cout << "in " << f << endl;
-    };
-    ~Tracer() {
-        cout << "leave " << f << endl;
-    };
-    private:
-    string f;
-};
+//using std::map;
+//using std::string;
+//using std::vector;
 
-class ChineseNumberSplit {
-    public:
-    static bool Split(const string &src, vector<string> &result);
-    static bool isInit;
+//bool ChineseNumberSplit::isInit = false;
+//map<string, int> ChineseNumberSplit::g_unit_index;
+//map<string, int> ChineseNumberSplit::g_chinese_index;
+//map<int, string> ChineseNumberSplit::g_index_chinese;
+//map<string, int> ChineseNumberSplit::g_digit_index;
+//map<int, string> ChineseNumberSplit::g_index_digit;
+//map<int, string> ChineseNumberSplit::g_index_unit;
 
-    private:
-    static bool Init();
-    static bool GetNumbers(const string &src,
-                                    vector<string> &numbers);
-    static bool IsValidUnitSeq(const vector<int> &src);
-    static bool GetValidUnitSeq(const vector<int> &src,
-                                vector<vector<int>> &valid_seq);
-    static bool GetValidNumsByUnit(const vector<int> &src_ones,
-                                   vector<vector<int>> &valid_unit_seq,
-                                   vector<vector<int>> &valid_nums);
-    static bool ChineseToIndex(const string &src, vector<int> &index, vector<string> &src_ones);
-    static bool GetUnit(const vector<int> &src, vector<int> &unit_seq);
-    static bool IndexToChinese(const vector<vector<int>> &indexs,
-                               vector<string> &chinese);
-    static bool LeftRight(vector<vector<int>> &seqs);
+ChineseNumberSplit *chineseNumberSplit = NULL;
 
-    // 十,百,千,万,亿
-    // 20,21,22,23,24
-    static map<string, int> g_unit_index;
 
-    // 零,一,二,三,四,五,六,七,八,九,幺,两,十,百,千,万,亿
-    // 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11,12,20,21,22,23,24
-    static map<string, int> g_chinese_index;
+ChineseNumberSplit * ChineseNumberSplit::GetInstance()
+{
+	if (chineseNumberSplit == NULL) {
+		chineseNumberSplit = new ChineseNumberSplit();
+	}
 
-    // 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11,12,20,21,22,23,24
-    // 零,一,二,三,四,五,六,七,八,九,幺,两,十,百,千,万,亿
-    static map<int, string> g_index_chinese;
+	return chineseNumberSplit;
+}
 
-    static map<string, int> g_digit_index;
-    static map<int, string> g_index_digit;
+ChineseNumberSplit::ChineseNumberSplit()
+{
+	Init();
+}
 
-    static map<int, string> g_index_unit;
-};
-
-bool ChineseNumberSplit::isInit = false;
-map<string, int> ChineseNumberSplit::g_unit_index;
-map<string, int> ChineseNumberSplit::g_chinese_index;
-map<int, string> ChineseNumberSplit::g_index_chinese;
-map<string, int> ChineseNumberSplit::g_digit_index;
-map<int, string> ChineseNumberSplit::g_index_digit;
-
-map<int, string> ChineseNumberSplit::g_index_unit;
+ChineseNumberSplit::~ChineseNumberSplit()
+{
+}
 
 bool ChineseNumberSplit::Split(const string &src, vector<string> &numbers)
 {
-    if (!isInit) {
-        Init();
-        isInit = true;
-    }
-
     return GetNumbers(src, numbers);
 }
 
 bool ChineseNumberSplit::Init()
 {
-    if (isInit) {
-        return true;
-    }
-    {
 	g_chinese_index["零"] = 0;
 	g_chinese_index["一"] = 1;
 	g_chinese_index["二"] = 2;
@@ -124,6 +90,7 @@ bool ChineseNumberSplit::Init()
 	g_index_chinese[23] = "万";
 	g_index_chinese[24] = "亿";
 
+	/*
 	g_digit_index["零"] = 0;
 	g_digit_index["一"] = 1;
 	g_digit_index["二"] = 2;
@@ -136,6 +103,7 @@ bool ChineseNumberSplit::Init()
 	g_digit_index["九"] = 9;
 	g_digit_index["幺"] = 11;
 	g_digit_index["两"] = 12;
+	*/
 
 	g_index_digit[0] = "零";
 	g_index_digit[1] = "一";
@@ -161,11 +129,11 @@ bool ChineseNumberSplit::Init()
 	g_index_unit[22] = "千";
 	g_index_unit[23] = "万";
 	g_index_unit[24] = "亿";
-    }
+
+	return true;
 }
 
-// 每个汉字长度
-#define ONE_CHAR_LENGTH 3
+/*
 bool ShowVector(const vector<int> &v)
 {
     int i ;
@@ -173,6 +141,7 @@ bool ShowVector(const vector<int> &v)
         cout << v[i] << " ";
     }
 }
+*/
 
 //一千两百三十四万五千六百七十八亿九千八百七十六万五千四百三十二
 //千百十万千百十亿千百十万千百十
@@ -224,11 +193,8 @@ bool ChineseNumberSplit::IsValidUnitSeq(const vector<int> &src)
 }
 
 // return always true.
-bool ChineseNumberSplit::GetValidUnitSeq(const vector<int> &src, vector<vector<int>> &valid_seq)
+bool ChineseNumberSplit::GetValidUnitSeq(const vector<int> &src, vector<vector<int> > &valid_seq)
 {
-    /*
-    Tracer tracer(__func__);
-    */
     int offset = 0;
     bool ret = false;
     for (offset = 0; offset < src.size(); ) {
@@ -262,88 +228,81 @@ bool ChineseNumberSplit::GetValidUnitSeq(const vector<int> &src, vector<vector<i
 
 // return always return true.
 bool ChineseNumberSplit::GetValidNumsByUnit(const vector<int> &src_ones,
-                  vector<vector<int>> &valid_unit_seq,
-                 vector<vector<int>> &valid_nums)
+                  vector<vector<int> > &valid_unit_seq,
+                 vector<vector<int> > &valid_nums)
 {
-    //Tracer tracer(__func__);
-    {
-        int i = 0, j = 0, k = 0;
-        for (i = 0; i < valid_unit_seq.size(); i++) {
-            vector<int> &unit_seq = valid_unit_seq[i];
-            vector<int> res;
-            bool lastisdigit = false;
-            for (j = 0; j < unit_seq.size(); j++) {
-                for ( ; k < src_ones.size(); k++) {
-                    if (g_index_digit.find(src_ones[k]) != g_index_digit.end()) {
-                        if (lastisdigit) {
-                            valid_nums.push_back(res);
-                            res.clear();
-                        }
-                        res.push_back(src_ones[k]);
-                        lastisdigit = true;
-                    }
-                    else if(g_index_unit.find(src_ones[k]) != g_index_unit.end()) {
-                        res.push_back(src_ones[k]);
-                        lastisdigit = false;
-                        j++;
-                        if (j >= unit_seq.size()) {
-                            k++;
-                            break;
-                        }
-                    }
-                }
-            }
-            if (res.size() > 0) {
-                valid_nums.push_back(res);
-            } 
-        }
-        bool last_is_zero = false;
-        if (k < src_ones.size()) {
-            if (g_index_digit.find(src_ones[k]) != g_index_digit.end()) {
-                if (valid_nums.size() > 0) {
-                    valid_nums[valid_nums.size()-1].push_back(src_ones[k]);
-                    if (src_ones[k] == 0) {
-                        last_is_zero = true;
-                    }
-                }
-            }
-            k++;
-        }
-        if (k < src_ones.size() && last_is_zero) {
-            if (valid_nums.size() > 0) {
-                valid_nums[valid_nums.size()-1].push_back(src_ones[k]);
-            }
-            k++;
-        }
-
-        for ( k; k < src_ones.size(); k++ ) {
-            vector<int> temp;
-            temp.push_back(src_ones[k]);
-            valid_nums.push_back(temp);
-        }
+	int i = 0, j = 0, k = 0;
+	for (i = 0; i < valid_unit_seq.size(); i++) {
+		vector<int> &unit_seq = valid_unit_seq[i];
+		vector<int> res;
+		bool lastisdigit = false;
+		for (j = 0; j < unit_seq.size(); j++) {
+			for ( ; k < src_ones.size(); k++) {
+				if (g_index_digit.find(src_ones[k]) != g_index_digit.end()) {
+					if (lastisdigit) {
+						valid_nums.push_back(res);
+						res.clear();
+					}
+					res.push_back(src_ones[k]);
+					lastisdigit = true;
+				}
+				else if(g_index_unit.find(src_ones[k]) != g_index_unit.end()) {
+					res.push_back(src_ones[k]);
+					lastisdigit = false;
+					j++;
+					if (j >= unit_seq.size()) {
+						k++;
+						break;
+					}
+				}
+			}
+		}
+		if (res.size() > 0) {
+			valid_nums.push_back(res);
+		} 
+	}
+	bool last_is_zero = false;
+	if (k < src_ones.size()) {
+		if (g_index_digit.find(src_ones[k]) != g_index_digit.end()) {
+			if (valid_nums.size() > 0) {
+				valid_nums[valid_nums.size()-1].push_back(src_ones[k]);
+				if (src_ones[k] == 0) {
+					last_is_zero = true;
+				}
+			}
+		}
+		k++;
+	}
+	if (k < src_ones.size() && last_is_zero) {
+		if (valid_nums.size() > 0) {
+			valid_nums[valid_nums.size()-1].push_back(src_ones[k]);
+		}
+		k++;
     }
+
+	// the last numbers which has no unit.
+	for ( ; k < src_ones.size(); k++ ) {
+		vector<int> temp;
+		temp.push_back(src_ones[k]);
+		valid_nums.push_back(temp);
+	}
+
     return true;
 }
 
 // return
-//      if has non-chinese-number in middle, return false
-//      if has non-chinese-number in tail, return true
+//      if has non-chinese-number, return false
 //      if all is chinese-number, return true
 bool ChineseNumberSplit::ChineseToIndex(const string &src,
-                                        vector<int> &index,
-                                        vector<string> &src_ones)
+                                        vector<int> &index)
 {
     int i = 0;
     for (i = 0; i < src.length(); i += ONE_CHAR_LENGTH) {
         string sss = src.substr(i, ONE_CHAR_LENGTH);
         if (g_chinese_index.find(sss) == g_chinese_index.end()) {
-            //cout << sss << ",not digits, error\n";
             return false;
-            //index.push_back(-1);
-        } else {
-            index.push_back(g_chinese_index[sss]);
         }
-        src_ones.push_back(sss);
+		index.push_back(g_chinese_index[sss]);
     }
     return true;
 }
@@ -362,7 +321,7 @@ bool ChineseNumberSplit::GetUnit(const vector<int> &src, vector<int> &unit_seq)
 }
 
 // return always return true
-bool ChineseNumberSplit::IndexToChinese(const vector<vector<int>> &indexs, vector<string> &chinese)
+bool ChineseNumberSplit::IndexToChinese(const vector<vector<int> > &indexs, vector<string> &chinese)
 {
     int i = 0, j = 0;
     {
@@ -373,21 +332,18 @@ bool ChineseNumberSplit::IndexToChinese(const vector<vector<int>> &indexs, vecto
                     num += g_index_chinese[indexs[i][j]];
                 }
                 else{
-                    //cout << "valid_nums[i][j] " << indexs[i][j] << " is not valid number\n"; 
                     break;
                 }
             }
             chinese.push_back(num);
-            //cout << "number: " << num << endl;
         }
     }
     return true;
 }
 
 // return always return true
-bool ChineseNumberSplit::LeftRight(vector<vector<int>> &seqs)
+bool ChineseNumberSplit::LeftRight(vector<vector<int> > &seqs)
 {
-    //Tracer tracer(__func__);
     int i = 1, j = 0;
     for (i = 1; i < seqs.size(); i++) {
         vector<int> &seq_1 = seqs[i-1];
@@ -441,21 +397,18 @@ bool ChineseNumberSplit::LeftRight(vector<vector<int>> &seqs)
 }
 
 // return 
-//      true    Split success.
-//      false   donot split.
+//      true    yes split.
+//      false   no split.
 // parameter
 //      should be all chinese number.
 bool ChineseNumberSplit::GetNumbers(const string &src, vector<string> &numbers)
 {
-    //Tracer tracer(__func__);
     int offset = 0;
-    int ret = true;
+    bool ret = true;
 
     vector<int> src_index_ones;
-    vector<string> src_ones;
-    //cout << "src: " << src << endl;
 
-    ret = ChineseToIndex(src, src_index_ones, src_ones);
+    ret = ChineseToIndex(src, src_index_ones);
     if (!ret) {
         return false;
     }
@@ -468,10 +421,10 @@ bool ChineseNumberSplit::GetNumbers(const string &src, vector<string> &numbers)
         return false;
     }
 
-    vector<vector<int>> valid_unit_seq;
+    vector<vector<int> > valid_unit_seq;
     GetValidUnitSeq(unit_seq, valid_unit_seq);
 
-    vector<vector<int>> valid_nums;
+    vector<vector<int> > valid_nums;
     GetValidNumsByUnit(src_index_ones, valid_unit_seq, valid_nums);
 
     LeftRight(valid_nums);
@@ -480,6 +433,8 @@ bool ChineseNumberSplit::GetNumbers(const string &src, vector<string> &numbers)
     return true;
 }
 
+/*
+*/
 bool ReadSource(vector<string> &src)
 {
     string file = "chinese_num.txt";
@@ -508,7 +463,7 @@ int main()
     for (i = 0; i < srcs.size(); i++) {
         vector<string> numbers;
 
-        ChineseNumberSplit::Split(srcs[i], numbers);
+        ChineseNumberSplit::GetInstance()->Split(srcs[i], numbers);
 
         cout << "src: " << srcs[i] << endl;
         int j = 0;
