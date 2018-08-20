@@ -4,9 +4,9 @@
 #include <string>
 #include <vector>
 #include <iostream>
-#include <fstream>
 #include <map>
 #include <algorithm>
+#include <fstream>
 
 // 每个汉字长度
 #define ONE_CHAR_LENGTH 3
@@ -226,6 +226,15 @@ bool ChineseNumberSplit::GetValidUnitSeq(const vector<int> &src, vector<vector<i
     return true;
 }
 
+void showVector(vector<int> & v)
+{
+	int i = 0;
+	for (i = 0; i < v.size(); i++) {
+		cout << v[i] << " ";
+	}
+	cout << endl;
+}
+
 // return always return true.
 bool ChineseNumberSplit::GetValidNumsByUnit(const vector<int> &src_ones,
                   vector<vector<int> > &valid_unit_seq,
@@ -235,20 +244,37 @@ bool ChineseNumberSplit::GetValidNumsByUnit(const vector<int> &src_ones,
 	for (i = 0; i < valid_unit_seq.size(); i++) {
 		vector<int> &unit_seq = valid_unit_seq[i];
 		vector<int> res;
+		int zero_nums = 0;
 		bool lastisdigit = false;
+		bool last_is_zero = false;
 		for (j = 0; j < unit_seq.size(); j++) {
 			for ( ; k < src_ones.size(); k++) {
+				// is digit
 				if (g_index_digit.find(src_ones[k]) != g_index_digit.end()) {
-					if (lastisdigit) {
+					// last is 0 and zero-count is 1, continue, and donot split. 
+					// last is 0 and zero-count greater than 1, split.
+					// other, split.
+					if (last_is_zero) {
+						;
+					}
+					else if (lastisdigit) {
 						valid_nums.push_back(res);
 						res.clear();
+					}
+					if (src_ones[k] == g_chinese_index["零"]){
+						zero_nums++;
+						last_is_zero = true;
+					} else {
+						last_is_zero = false;
 					}
 					res.push_back(src_ones[k]);
 					lastisdigit = true;
 				}
+				// is unit.
 				else if(g_index_unit.find(src_ones[k]) != g_index_unit.end()) {
 					res.push_back(src_ones[k]);
 					lastisdigit = false;
+					last_is_zero = false;
 					j++;
 					if (j >= unit_seq.size()) {
 						k++;
@@ -261,6 +287,7 @@ bool ChineseNumberSplit::GetValidNumsByUnit(const vector<int> &src_ones,
 			valid_nums.push_back(res);
 		} 
 	}
+	// tail number after unit.
 	bool last_is_zero = false;
 	if (k < src_ones.size()) {
 		if (g_index_digit.find(src_ones[k]) != g_index_digit.end()) {
@@ -273,6 +300,7 @@ bool ChineseNumberSplit::GetValidNumsByUnit(const vector<int> &src_ones,
 		}
 		k++;
 	}
+	// tail number after zero after unit.
 	if (k < src_ones.size() && last_is_zero) {
 		if (valid_nums.size() > 0) {
 			valid_nums[valid_nums.size()-1].push_back(src_ones[k]);
@@ -369,6 +397,15 @@ bool ChineseNumberSplit::LeftRight(vector<vector<int> > &seqs)
                 seqs.erase(seqs.begin() + i);
                 i--;
             }
+			// add last two digit to last.
+			// last: 二千
+			// this: 零五
+			else if (seq_2.size() == 2 && seq_2[0] == g_chinese_index["零"]  && g_index_digit.find(seq_2[0]) != g_index_digit.end()) {
+                seq_1.push_back(seq_2[0]);
+                seq_1.push_back(seq_2[1]);
+                seqs.erase(seqs.begin() + i);
+                i--;
+			}
         }
 
         // move from last to this.
@@ -428,6 +465,7 @@ bool ChineseNumberSplit::GetNumbers(const string &src, vector<string> &numbers)
     GetValidNumsByUnit(src_index_ones, valid_unit_seq, valid_nums);
 
     LeftRight(valid_nums);
+
     IndexToChinese(valid_nums, numbers);
 
     return true;
