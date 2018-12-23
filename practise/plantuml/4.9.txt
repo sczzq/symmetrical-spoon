@@ -1,0 +1,25 @@
+@startuml
+
+partition conductor {
+	(*) --> "climbs on platform"
+	--> === S1 ===
+	--> Bows
+}
+
+partition audience #LightSkyBlue {
+	=== S1 === --> Applauds
+}
+
+partition conductor {
+	Bows --> === S2 ===
+	--> WavesArmes
+	Applauds --> === S2 ===
+}
+
+partition orchestra #CCCCEE {
+	WavesArmes --> Introduction
+	--> "Play music"
+}
+
+@enduml
+

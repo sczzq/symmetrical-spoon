@@ -1,0 +1,13 @@
+@startuml
+
+start
+
+while (data available?)
+:read data;
+:generate diagrams;
+endwhile
+
+stop
+
+@enduml
+

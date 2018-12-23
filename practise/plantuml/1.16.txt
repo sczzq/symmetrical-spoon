@@ -1,0 +1,10 @@
+@startuml
+
+Alice -> Bob : Authentication Request
+...
+Bob -> Alice : Authentication Response
+...5 miniutes latter...
+Bob --> Alice : Bye !
+
+@enduml
+

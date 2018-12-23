@@ -1,0 +1,62 @@
+@startuml
+
+actor transserver
+actor other
+
+'transfer grammar file
+'init grammar key words
+
+'transfer task list
+'parse task list
+'init new task
+'execute new task
+
+'transfer all audio file from ftp server
+'read all audio file in local file system
+'construct new parameter in trans server
+'transfer audio data to asr server
+'get text from asr server
+'save formatted text to file in local file system
+
+'compress text files to zip file in local file system
+'upload zip file to ftp server
+'update state to webservice server
+
+skinparam packageStyle rectangle
+left to right direction
+
+rectangle transinit {
+	:transserver: --> (read local config file to init)
+}
+
+rectangle othercase {
+	:other: -up-> (put grammar file to ftpserver)
+	:other: -up-> (put audio file to ftp server)
+	:other: -up-> (put task to webservice server)
+	:other: -up-> (get trans status from webservice server)
+}
+
+'transserver --|> configfile
+'transserver --|> ftpserver
+'transserver --|> webserviceserver
+'transserver --|> asrserver
+
+rectangle mainrun {
+	:transserver: -down-> (get grammar from ftpserver)
+	:transserver: -down-> (get task from webservice server)
+}
+
+rectangle dotrans {
+	:transserver: -down-> (get audio file from ftp server)
+	:transserver: -down-> (do trans in asr server)
+	:transserver: -down-> (save formatted text to local file system)
+	:transserver: -down-> (compress zip with saved text)
+}
+
+rectangle upload {
+	:transserver: -down-> (upload zip file to ftp server)
+	:transserver: -down-> (update statue to webservice server)
+}
+
+@enduml
+

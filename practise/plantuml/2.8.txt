@@ -1,0 +1,21 @@
+@startuml
+
+top to bottom direction
+
+:user: --> (Use case 1)
+:user: --> (Use case 2)
+:user: -> (Use case 3)
+:user: -> (Use case 4)
+
+(Use case 5) <- :user:
+(Use case 6) <- :user:
+(Use case 7) <-- :user:
+(Use case 8) <-- :user:
+
+:user: -left-> (dummyLeft)
+:user: -right-> (dummyRight)
+:user: -up-> (dummyUp)
+:user: -down-> (dummyDown)
+
+@enduml
+

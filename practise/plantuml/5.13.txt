@@ -1,0 +1,24 @@
+@startuml
+
+:start;
+fork
+	:foo1;
+	:foo2;
+fork again
+	:foo3;
+	detach
+'remove arrow
+endfork
+if (foo4) then
+	:foo5;
+	detach
+'remove arrow
+endif
+	:foo6;
+	detach
+'remove arrow
+	:foo7;
+stop
+
+@enduml
+

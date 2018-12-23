@@ -1,0 +1,24 @@
+@startuml
+
+skinparam backgroundColor #EEEBDC
+
+actor 使用者
+participant "头等舱" as A
+participant "第二类" as B
+participant "最后一堂课" as 别的东西
+
+使用者 -> A : 完成这项工作
+activate A
+A -> B : 创建请求
+activate B
+B -> 别的东西 : 创建请求
+activate 别的东西
+别的东西 --> B: 这项工作完成
+destroy 别的东西
+B --> A : 请求创建
+deactivate B
+A --> 使用者 : 做完
+deactivate A
+
+@enduml
+

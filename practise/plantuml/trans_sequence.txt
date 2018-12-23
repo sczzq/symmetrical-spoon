@@ -1,0 +1,56 @@
+@startuml
+
+actor localfilesystem
+actor transserver
+database ftpserver
+control webserviceserver
+collections asrserver
+
+actor other
+
+'transfer grammar file
+'init grammar key words
+
+'transfer task list
+'parse task list
+'init new task
+'execute new task
+
+'transfer all audio file from ftp server
+'read all audio file in local file system
+'construct new parameter in trans server
+'transfer audio data to asr server
+'get text from asr server
+'save text to file in local file system
+
+'compress text files to zip file in local file system
+'upload zip file to ftp server
+'update state to webservice server
+
+autonumber
+
+other -> ftpserver : put grammar file to ftpserver
+other -> ftpserver : put audio file to ftp server
+other -> webserviceserver : put task to webservice server
+other -> webserviceserver : get trans status from webservice server
+
+'transserver --|> configfile
+'transserver --|> ftpserver
+'transserver --|> webserviceserver
+'transserver --|> asrserver
+
+transserver --> localfilesystem : read config file to init
+transserver --> ftpserver : get grammar from ftpserver
+
+transserver --> webserviceserver : get task from webservice server
+transserver --> ftpserver : get audio file from ftp server
+
+transserver --> trans : do trans in asr server
+transserver --> localfilesystem : save text to local file system
+transserver --> localfilesystem : compress zip on saved text
+
+transserver --> ftpserver : upload zip file to ftp server
+transserver --> webserviceserver : update statue to webservice server
+
+@enduml
+

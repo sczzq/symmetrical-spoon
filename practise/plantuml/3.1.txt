@@ -1,0 +1,23 @@
+
+@startuml
+
+class01 <|-- class02
+class03 *-- class04
+class05 o-- class06
+class07 .. class08
+class09 -- class10
+
+class11 <|.. class12
+class13 --> class14
+class15 ..> class16
+class17 ..|> class18
+class19 <--* class20
+
+class21 #-- class22
+class23 x-- class24
+class25 }-- class26
+class27 +-- class28
+class29 ^-- class30
+
+@enduml
+
