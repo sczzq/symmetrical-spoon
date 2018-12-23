@@ -1,0 +1,58 @@
+@startuml
+
+title transserver
+
+start
+
+:init config;
+:init ThreadPool;
+:in ThreadPool, init internal varaible;
+:in ThreadPool, init asr;
+:in ThreadPool, create asr_session;
+:in ThreadPool, create work thread;
+if (mainthread)
+	while (true)
+		if (has new grammar config file in ftp server) then (yes)
+			:waiting for task finished;
+			:set new grammar config;
+		else (no)
+		endif
+		if (read task list from webservice server) then (yes)
+			if (check task list valid) then (yes)
+				:construct new param;
+				:add new Param to ThreadPool;
+				:tell ThreadPool to work;
+			else (no)
+			endif
+		else (no)
+		endif
+		if (check and get result) then (yes)
+			:check and get result;
+			:compress text file to zip file;
+			:upload zip file to ftp server;
+			:update trans state to webservervice server;
+		else (no)
+		endif
+	endwhile
+else
+	: do work in work thread;
+	fork
+		while (true)
+		    :waiting work condition;
+		    :get one task;
+			while (read file from ftp server?) is (yes)
+				:costruct asr-config-param;
+				:do trans with asr-server;
+				:get text from asr-server;
+				:format text to xml;
+				:save to file;
+			endwhile (no)
+			:tell mainthread task is finished;
+		endwhile
+	end fork
+endif
+
+'stop
+
+@enduml
+
