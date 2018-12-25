@@ -15,24 +15,36 @@ if (mainthread)
 		if (has new grammar config file in ftp server) then (yes)
 			:waiting for task finished;
 			:set new grammar config;
+			:delete local tmp grammar file
+			:rename grammar file in ftpserver
 		else (no)
 		endif
 		if (read task list from webservice server) then (yes)
 			if (check task list valid) then (yes)
-				:construct new param;
-				:add new Param to ThreadPool;
-				:tell ThreadPool to work;
+				if (task valid?) then (yes)
+					:construct new task;
+					:add new task to ThreadPool;
+					:tell ThreadPool to work;
+				else (no)
+					:sleep internal second(default 20s)
+				endif
 			else (no)
 			endif
 		else (no)
 		endif
-		if (check and get result) then (yes)
-			:check and get result;
-			:compress text file to zip file;
-			:upload zip file to ftp server;
-			:update trans state to webservervice server;
-		else (no)
-		endif
+		while (true)
+			:waiting for threadpool notify;
+			if (check and get result) then (yes)
+				:compress text file to zip file;
+				:upload zip file to ftp server;
+				:update trans state to webservervice server;
+				if (task list not full ?) then (yes)
+					:endwhile
+				else (no)
+				endif
+			else (no)
+			endif
+		endwhile
 	endwhile
 else
 	: do work in work thread;

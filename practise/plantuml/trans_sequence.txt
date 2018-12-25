@@ -4,7 +4,6 @@ actor localfilesystem
 actor transserver
 database ftpserver
 control webserviceserver
-collections asrserver
 
 actor other
 
@@ -29,28 +28,51 @@ actor other
 
 autonumber
 
+group client operator
 other -> ftpserver : put grammar file to ftpserver
 other -> ftpserver : put audio file to ftp server
 other -> webserviceserver : put task to webservice server
 other -> webserviceserver : get trans status from webservice server
+end
 
 'transserver --|> configfile
 'transserver --|> ftpserver
 'transserver --|> webserviceserver
 'transserver --|> asrserver
 
+autonumber 1 1
+
+group transserver init
 transserver --> localfilesystem : read config file to init
-transserver --> ftpserver : get grammar from ftpserver
+end
+
+autonumber 1 1
+
+loop bigwhile
+
+transserver --> ftpserver : download grammar from ftp server
+transserver --> localfilesystem : read grammar
+transserver --> localfilesystem : config keywords in local grammar file
+transserver --> localfilesystem : delete grammar in local filesystem
+transserver --> ftpserver : rename grammar file in ftp server
 
 transserver --> webserviceserver : get task from webservice server
+transserver --> transserver : parse task param
+transserver --> transserver : construct task
+transserver --> transserver : add task and notify threadpool to work
+
+group workthread
 transserver --> ftpserver : get audio file from ftp server
-
-transserver --> trans : do trans in asr server
+transserver --> transserver : do translate
 transserver --> localfilesystem : save text to local file system
-transserver --> localfilesystem : compress zip on saved text
+transserver --> transserver : notify mainthread to deal text file
+end
 
+transserver --> localfilesystem : compress saved text file to zip file
 transserver --> ftpserver : upload zip file to ftp server
 transserver --> webserviceserver : update statue to webservice server
+
+end
 
 @enduml
 
