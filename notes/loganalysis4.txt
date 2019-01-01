@@ -1,0 +1,166 @@
+log analysis 4
+
+日志的作用
+在数据库中，有的会记录每一步的操作的命令，
+可以以这种方式进行数据恢复和事务重放，
+在日志系统中，如果也有这样的方式，
+那么也是可以进行事务的重放的，
+
+
+关于信号发送和处理的过程
+日志形式
+发送的形式
+MSG1 WORKER1 WORKER1_ID
+处理的形式
+MSG2 WORKER2 WORKER1_ID
+以此关系建立起来关联
+发送消息MSG1也即是步骤名
+
+在上一页的linkmap中，
+过程中有的step是以linkmap中的转换确定的，
+也即是，过程中只指定一个步骤名
+下面的步骤是被一个步骤的其他项确定的
+这样的逻辑不能作出精确的判断，
+不能显式判断终止，也不能再区分步骤，
+
+完善如下
+过程中指定一个或多个步骤名
+首个步骤名确定后，得到步骤一
+根据步骤一的某一项和第二个步骤名确认步骤二，
+如果某个步骤只需要步骤名就可确定，
+那么就不是用关联表，或者使用假的关联关系
+
+还有可能使用多个项来确定下一个步骤
+比如以上的信号发送和处理的过程
+发送方：MSG1 WORKER1 WORKER1_ID
+处理方：MSG2 WORKER2 WORKER1_ID
+需要这些
+步骤名 MSG1 MSG2
+工作者 WORKER1 WORKER2
+工作者ID WORKER1_ID
+这五项来确定这个过程
+
+关联关系
+初始化
+process
+  name = signalprocess
+  stepnamelist = "MSG1 MSG2"
+  steplist = null
+  linkmap = {
+	  current = WORKER1
+	  map = {
+		  "WORKER1 WORKER1_ID";
+		  "WORKER2 WORKER1_ID";
+	  };
+	  index = 0;
+  }
+worker1 配置文件中的项
+worker1_id 从日志中获取，不需配置
+
+如果有一步不需要步骤名和其他项关联呢
+比如，以下只是消息片段，没有消息触发者
+MSG1 WORKER2 WORKER1_ID
+MSG2 WORKER2 WORKER1_ID
+MSG3 
+MSG4
+MSG5 WORKER1 WORKER2_ID
+MSG6 WORKER1 WORKER2_ID
+这个过程表示
+WORKER1 发送消息给 WORKER2，WORKER1 的 ID 是 WORKER1_ID
+WORKER2 处理消息，来自WORKER1，WORKER1 的 ID 是 WORKER1_ID
+WORKER2 处理
+WORKER2 处理
+WORKER2 发送消息给 WORKER1，WORKER2 的 ID 是 WORKER2_ID
+WORKER1 处理消息，来自WORKER2，WORKER2 的 ID 是 WORKER2_ID
+初始化
+process
+  name = signalprocess2
+  stepnamelist = "MSG1 MSG2 MSG3 MSG4 MSG5 MSG6"
+  steplist = null
+  linkmap = {
+	  current = WORKER1
+	  map = {
+		  "WORKER2 WORKER1_ID";
+		  "WORKER2 WORKER1_ID";
+		  "THREADID";
+		  "THREADID";
+		  "WORKER1 WORKER2_ID";
+		  "WORKER1 WORKER2_ID"
+	  }
+  }
+这里每一个步骤都有步骤名和其它项的关联，
+信息提取逻辑
+1,
+查找到 MSG1 字符串
+获取步骤的各个项的值
+根据linkmap中的map记录WORKER2和WORKER1_ID
+2,
+联合MSG2 WORKER2 WORKER1_ID查找第二步
+找到之后，获取步骤的各个项的值
+根据linkmap中的map记录THREADID
+3,
+联合 MSG3 THREADID查找第三步
+找到之后，获取步骤的各个项的值
+根据linkmap中的map记录THREADID
+4,
+联合 MSG4 THREADID查找第四步
+找到之后，获取步骤的各个项的值
+根据linkmap中的map记录THREADID
+5,
+联合 MSG5 THREADID查找第五步
+找到之后，获取步骤的各个项的值
+根据linkmap中的map记录WORKER1和WORKER2_ID
+6,
+联合MSG6 WORKER1 WORKER2_ID查找第二步
+找到之后，获取步骤的各个项的值
+结束。
+
+这个逻辑中，要清楚了解每一个步骤的每一项的对应作用
+
+所以，有必要将所有类型的日志列出来
+根据日志的各个项设计处理逻辑
+或者说，
+在以上的逻辑处理中，需要指定每一个步骤的对应项的标识
+而这个需要列出来所有日志的类型
+
+不过，
+一个步骤的类型根据步骤名即可完全确定
+从unimrcp工程中搜索出来所有的打印日志的语句，
+可以看出，每个打印日志语句中的提示信息都是唯一的，
+将提示信息作为步骤名，每一行的打印根据提示信息可以确定这一行其它项的含义
+也即是，根据步骤名可以确定这个步骤的其它项的值
+
+那么，
+在步骤的设计中，是否使用给定项目的结构体
+还是根据不同的步骤设定不同的结构体
+如果需要通用性，那么需要通用的设计
+也就是步骤中的项目的多少不是固定的
+而是根据日志的设计而定
+那么，
+最简单的方式是手动编写步骤的配置文件
+在配置文件中说明每个步骤的格式和项目
+
+有没有可能从日志中自动分析出对应的项目呢
+应该是可以分析出具体的项目的，
+
+比如，给定所有的日志中每一行的提示信息，也就是步骤名
+查找到步骤名后，对其余内容作分解，
+日志的行前缀是有说明的，那么，只需要分解步骤名之后的内容
+
+在信号发送和处理逻辑中，
+有确定的步骤名之后的规则，
+TO name FROM id
+
+从程序运行来看，
+在发送信号转移工作线程之前，都是在同一个线程中工作的，
+所以，确认步骤名之后，只需要根据下一个步骤名和线程号即可确认下一个步骤
+在发送信号转移工作线程之后，需要通过上面说明的步骤名后的规则来确定下一个步骤
+如此，也不需要分解步骤名之后的项，
+因为只在信号发送和处理的时候用到了那些项，而信号发送和处理中的项是确定的，
+最差的情况，不同的信号发送和处理流程使用的项的格式是不同的，
+但也仅仅是有限的，很少的几项
+
+unimrcp工程的日志打印提示信息共有 566 个
+信号发送和处理的格式只有一个
+这个是比较舒服的
+
