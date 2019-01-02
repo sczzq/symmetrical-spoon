@@ -1,0 +1,10 @@
+行查找方式
+1，根据 LinePattern 找出行的 Message 部分
+2，查找 MessageName 是否属于 StepNameList
+3，查找 MessageName 是否属于 processlist 中的 process 的后续步骤，如果是，则获取 process 的 Linkmap
+4，查找 MessageName 对应的 Linkmap 的附加信息
+5，如果有附加信息且附加信息一致，查找此 MessageName 对应的 MessagePattern
+6，如果有 MessagePattern，获取 MessagePattern 对应的名称
+7，按照 LinePattern 和 MessagePattern 解析出对应项，放到 Step 中
+8，查找 MessageName 是否属于 process_template 的第一步，如果符合，则新建一个 process
+
