@@ -51,7 +51,7 @@ keywords_count=4
 
 # log file name pattern
 # 日志文件的文件名模式
-log_file_name_pattern="unimrcpserver*.log"
+log_file_name_pattern="../unimrcpserver*.log"
 echo "log file name pattern: [$log_file_name_pattern]"
 
 # sessionid regular pattern
