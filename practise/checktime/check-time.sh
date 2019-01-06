@@ -2,6 +2,10 @@
 
 # ####################   使用前请阅读   ###########################
 # 
+# 作用，简单的提取和统计
+# 以关键字提取日志文件的信息，
+# 并简单统计基本数据
+#
 # 支持的日志格式
 # Time Threadid Level Message
 # Time 格式 YYYY-MM-DD HH:MM:SS:UUUUUU
@@ -22,8 +26,8 @@
 # ############################################################
 #
 # 输出信息
-# 1，每秒的请求数
-# 2，每秒正在执行的 session 数，(并发数?)
+# 1，每秒每关键字出现次数
+# 2，每秒第一步到其他步骤之间存活数(并发数?)
 #
 # ############################################################
 
@@ -179,8 +183,7 @@ k3_sessionid_file="3_sessionid.txt"
 if [ ! -f $k3_sessionid_file ]
 then
     echo "start `date `"
-    # 根据 session id 的正则配置规则获取包含关键字的行的 session id
-    # get total session id
+    # 根据 session id 的正则配置规则获取每一行的 session id
     grep -Eo "$sessionidpattern1" ${k2_message_file} | grep -Eo "$sessionidpattern2" > $k3_sessionid_file
 
     t_lineno=`wc -l $k2_message_file | awk '{print $1}'`
@@ -194,12 +197,11 @@ else
 fi
 
 echo "--4--"
+# 获取每一个 session id 出现的次数
 k4_sessionid_count_file="4_sessionid_count.txt"
 if [ ! -f $k4_sessionid_count_file ]
 then
     echo "start `date `"
-    # 获取每一个 session id 出现的次数
-    # 和 k_total_sessionid_file 中的 session id 行行对应
     awk -v keywordscount=$keywords_count ' \
         BEGIN                 \
         {                     \
@@ -239,6 +241,8 @@ fi
 
 echo "--5--"
 # 将所有包含关键字的行按照 session 的过程分为完整的和不完整的
+# 一个 session 过程包含 keywords_count 个关键字的行
+# 也就是一个 session 过程包含 keywords_count 个 session id.
 k5_complete_session_file="5_complete_session.txt"
 k5_incomplete_session_file="5_incomplete_session.txt"
 if [ ! -f $k5_complete_session_file ]
@@ -287,6 +291,8 @@ then
 		exit 1
 	fi
 
+	rm $tempfile $tempfile1
+
     echo "end `date `"
     echo "step finished, get "
 else
@@ -296,7 +302,8 @@ fi
 #---------------------------------------------------------------------------------
 
 echo "--6--"
-# 获取完整 session 中的每个关键字对应的所有的行，然后保存到以关键字命名的文件中
+# 获取完整 session 中的每个关键字对应的所有的行
+# 然后保存到以关键字命名的文件中
 # get split file from k_total_session_file by keywords
 k6_filename="${filename6[0]}"
 if [ ! -f "$k6_filename" ]
@@ -431,7 +438,6 @@ then
 	echo "just copy first file."
     cp ${filename6[0]}  ${filename11[0]}
 
-
 	echo "start of resort, `date`"
     for ((i=1; i<keywords_count; i++))
     do
@@ -451,6 +457,8 @@ then
         echo "in $i, end `date`"
     done
 	echo "end of resort, `date`"
+
+	rm $tempfile
 
     echo "end `date `"
     echo "step finished, get sorted sessionid file each keywords."
