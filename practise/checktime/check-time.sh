@@ -60,7 +60,7 @@ keywords_count=4
 
 # log file name pattern
 # 日志文件的文件名模式
-log_filename_pattern='../unimrcp-100pps-500k-request/unimrcpserver*.log'
+log_filename_pattern='./unimrcpserver*.log'
 echo "log filename pattern: [$log_filename_pattern]"
 
 # sessionid regular pattern
@@ -124,6 +124,53 @@ check_lineno_equal()
 	m_lineno=`wc -l $outfile | awk '{print $1}'`
 	check_equal $t_lineno $m_lineno $msg
 }
+
+check_awk()
+{
+	awk --version 1>/dev/null 2>&1
+	check "No GNU Awk"
+}
+
+check_grep()
+{
+	grep --version 1>/dev/null 2>&1
+	check "No grep"
+}
+
+check_paste()
+{
+	paste --version 1>/dev/null 2>&1
+	check "No paste"
+}
+
+check_cut()
+{
+	cut --version 1>/dev/null 2>&1
+	check "No cut"
+}
+
+check_wc()
+{
+	wc --version 1>/dev/null 2>&1
+	check "No cut"
+}
+
+check_awk_version()
+{
+	version=`awk --version | grep -Eo 'GNU Awk [0-9]\.[0-9]\.[0-9]' | grep -Eo '[0-9]\.[0-9]\.[0-9]' `
+	major=`echo $version | awk -F '.' '{print $1}'`
+	if [ "$major" != "4" ];then
+		echo "GNU Awk version is $version, please update to 4.x"
+		exit 1
+	fi
+}
+
+check_awk
+check_grep
+check_paste
+check_cut
+check_wc
+check_awk_version
 
 # replace spaceblank with '_'.
 for ((i=0; i<keywords_count; i++ ))
