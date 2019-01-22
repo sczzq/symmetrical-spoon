@@ -109,12 +109,13 @@ void *test3_loop1(void *arg)
 	{
 		if (i < 3)
 		{
+			pthread_cond_signal(cond1);
 			printf("loop1[%d]\n", i);
 			break;
 		}
-		printf("loop1[%d]\n", i);
 		pthread_cond_signal(cond1);
 		pthread_mutex_lock(mutex);
+		pthread_cond_signal(cond1);
 		pthread_cond_wait(cond2, mutex);
 		pthread_mutex_unlock(mutex);
 	}
@@ -137,12 +138,13 @@ void *test3_loop2(void *arg)
 	{
 		if (i < 3)
 		{
+			pthread_cond_signal(cond2);
 			printf("loop2[%d]\n", i);
 			break;
 		}
-		printf("loop2[%d]\n", i);
 		pthread_cond_signal(cond2);
 		pthread_mutex_lock(mutex);
+		pthread_cond_signal(cond2);
 		pthread_cond_wait(cond1, mutex);
 		pthread_mutex_unlock(mutex);
 	}
