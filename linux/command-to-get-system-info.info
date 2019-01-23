@@ -1,0 +1,135 @@
+Here's a list of commands, tips and info that I've compiled from several different sources. I use this as a quick reference when I need to find info about my computer or my operating system.
+
+General System Info
+
+Note: Most hardware info commands should be run as root. Some even show more info when run as root.
+
+Run qtparted or GParted for hard drive and partition info!!!
+Also, see KDiskFree. And fdisk -l for info on all partitions.
+
+hardinfo - good report to run; also, check the Details tab.
+
+Ko's Method For Getting A Hardware Report:
+This report runs a series of reports, some of which are listed individually further on in this document.
+Install through Synaptic the package installation-report.
+Then run in a maximized konsole:
+report-hw
+or
+report-hw > hwreport (Sends the output to a textfile called hwreport in your home folder)
+
+sysinfo a nice graphical display, run it from a terminal.
+
+hal-device-manager
+kde-hal-device-manager
+These packages can be installed from Synaptic. Use kde-hal-device-manager by clicking KMenu > System > Device Manager.
+
+dmidecode -t memory (as root) The dmidecode tool dumps your system’s DMI (Desktop Management Interface) table contents in a human-readable format. This table contains information regarding system’s hardware components, as well as BIOS revisions etc. dmidecode output not only describes system current configuration, but also reports the BIOS limitations on supported CPU speed, Maximum Memory allowed and more.
+dmidecode | less (as root) BIOS info and system info (space to page down, q to quit)
+
+uname -a (info on your server)
+uname -m machine number (i.e. - i686)
+uname -r kernel version
+
+lshw (as root) - list hardware; might want to run lshw | less (space to page-down, q to quit)
+lshw-gtk (as root) - download this from Synaptic; it can be started from the terminal; click on any item for info; double click on the the items in bold to drill down; excellent front-end for lshw.
+
+lsb_release -a (release info) (don't forget the underscore) (or see /etc/lsb_release)
+***In Mepis Linux 6.5, this command returns:
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description: Ubuntu 6.06.1 LTS
+Release: 6.06
+Codename: dapper
+
+In Mepis 6.5, one solution for finding the version that you're running is to go to take a look at the login screen.
+
+lspci (as root) (controllers, etc.) (VERY good report; -v is verbose, -vv is very verbose
+lspci -tv (as root) shows tree
+lsusb, lsusb -tv - list usb devices
+lsmod (at root, shows kernel modules currently loaded. Also try lsmod | less)
+
+/proc - there's important info located in this directory! cd /proc, then ls; use cat to read the files in /proc such as cpuinfo, devices, filesystems, meminfo, partitions, swaps, uptime, version, etc.; also, you can cd into the subdirectories in /proc, for example cd driver.
+Examples:
+cat /proc/cpuinfo (or cat cpuinfo from inside /proc)
+cat /proc/version (or cat verson from inside /proc) - version info
+cat /proc/swaps (or cat swaps from inside /proc) will show info on each swap partition.
+
+top - display Linux tasks, real-time; system summary info and a list of tasks currently being managed by the kernel - includes a live report on swap being used; type Shift-f to get sort options while running (default sort is k - CPU usage)
+
+htop - even better than top; interactive process viewer can be used to kill processes.
+ctrl-esc (from anywhere in KDE) - brings up the ProcessTable
+
+procinfo – procinfo is a small program that gathers some system information from diverse files under /proc and prints it to the screen. It duplicates some of the functionality of free(1) and uptime(1). This also includes lsdev for displaying information about installed hardware and socklist for displaying a list of open sockets.
+
+Other Ways To List Processes:
+ps aux
+ps -e
+
+swapon -s shows swap partitions and info
+swapon -a makes all swap partitions available as indicated in /etc/fstab.
+
+fdisk -l gives all partition info on hard disk(s).
+
+/etc/fstab (the fstab file contains file system configuration information)
+
+free (memory usage, in kilobytes.
+free -m (memory usage, in MB).
+
+ksysguard application and ksysguard tray applet both show memory usage
+
+df -h (disk info about all mounted file systems, human-readable)
+df -hT (disk info about all mounted file systems, human-readable, showing file system type)
+
+du / -bh | more detailed diskusage for each subdirectory starting at root, human readable; use space to page down, q to quit.
+du -s /var/log/* - displays space usage of all the files in /var/log
+
+hdparm -t /dev/hda (as root) - display disk performance of hda
+
+This shows what the cpu identifies itself as:
+arch (but it could be wrong, see command below)
+rpm --showrc| grep " arch" (if rpm is installed)
+
+ifconfig -a – displays IP address and other info
+
+Time Info Commands:
+date
+uptime
+Package Info
+
+apt-show-versions > InstalledPkgs (as root) - outputs the text file InstalledPkgs to your home directory. This shows all packages on your system. This list won't be alphabetized. You can copy and paste it into a spreadsheet and then sort it. You can download apt-show-versions with Synaptic. See man apt-show-versions for more info. Another option is to look at the installed packages in Synaptic.
+
+ls /var/cache/apt/archives > AddedPkgs outputs the text file AddedPkgs to your home directory. This shows all of the packages that you've added to your system (unless you've deleted this info, or unless Synaptic has been set to delete it!). There's also a "partial" directory, so
+ls /var/cache/apt/archives/partial > PartialPkgs to output a text file called PartialPkgs.
+
+To get a package list sorted by size:
+dpkg-query -W --showformat='${Installed-Size} ${Package}\n' | sort -n
+
+Here's a section that I tacked on, just so I'd have a quick reference to some helpful bash commands.
+Bash Info
+
+echo $PATH show the content of the environmental variable named PATH
+echo $? shows the exit code of the last command
+
+help shows a list of shell builtin commands, and help name shows help on the command name; also, see the section on Shell Builtin Commands in man bash
+
+whereis locates the binary, source, and manual page files for a command.
+
+which returns the pathnames of the files which would be executed in the current environment, had its arguments been given as commands in a strictly POSIX-conformant shell. It does this by searching the PATH for executable files matching the names of the arguments. Note: In Mepis Linux, which is an alias for type -path. Although that command is not explicitly defined, try the command help type for more info on the type command. which=type -path may be the same as type -P. In practice, the whichcommand and the type -path command may be equivalent. To see the true which command in action in Mepis Linux, type"which" (use quotes) (or unalias which to permanently remove the alias).
+
+type (name) indicates how it would be interpreted if used as a command name
+
+alias shows a list of all aliases
+unalias will remove an alias permanently
+"command" quoting the command will run the "true" command (if it exists) instead of the alias
+
+file guesses what type of file
+file file
+file -i file for more info
+file -iz file for compressed files
+file -s file for block or special character files
+
+tree – list directory structure and content in a tree-like format; by default lists the contents of the directory that you're in.
+
+cal - current month
+cal -3 - last month, current month, and next month
+cal [month] year - specify month, or month and year [examples: cal august 2007; cal 2006]
