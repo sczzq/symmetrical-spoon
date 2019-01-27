@@ -15,14 +15,14 @@
 		tv_stop.tv_sec--; \
 	} \
  \
-	printf("Times[%d] Elapsed[%ld.%ld]\n", \
+	printf("Count[%d] Elapsed[%ld.%ld]\n", \
 			times, \
 			tv_stop.tv_sec - tv_start.tv_sec, \
 			tv_stop.tv_usec - tv_start.tv_usec);
 
 int test1(int times)
 {
-	MARK_START_TIME
+	MARK_START_TIME;
 
 	int i = times;
 	while(i--)
@@ -34,7 +34,7 @@ int test1(int times)
 		pthread_mutex_unlock(&mutex);
 	}
 
-	MARK_STOP_TIME
+	MARK_STOP_TIME;
 }
 
 struct test2_data{
@@ -44,7 +44,7 @@ struct test2_data{
 
 void *test2_loop(void *arg)
 {
-	MARK_START_TIME
+	MARK_START_TIME;
 
 	struct test2_data *data = (struct test2_data *)arg;
 	pthread_mutex_t *mutex = data->mutex;
@@ -58,7 +58,7 @@ void *test2_loop(void *arg)
 		pthread_mutex_unlock(mutex);
 	}
 
-	MARK_STOP_TIME
+	MARK_STOP_TIME;
 }
 
 int test2(int times)
@@ -96,7 +96,7 @@ struct test3_data {
 
 void *test3_loop1(void *arg)
 {
-	MARK_START_TIME
+	MARK_START_TIME;
 
 	struct test3_data *data = (struct test3_data *)arg;
 	pthread_mutex_t *mutex = data->mutex;
@@ -113,19 +113,18 @@ void *test3_loop1(void *arg)
 			printf("loop1[%d]\n", i);
 			break;
 		}
-		pthread_cond_signal(cond1);
 		pthread_mutex_lock(mutex);
 		pthread_cond_signal(cond1);
 		pthread_cond_wait(cond2, mutex);
 		pthread_mutex_unlock(mutex);
 	}
 
-	MARK_STOP_TIME
+	MARK_STOP_TIME;
 }
 
 void *test3_loop2(void *arg)
 {
-	MARK_START_TIME
+	MARK_START_TIME;
 
 	struct test3_data *data = (struct test3_data *)arg;
 	pthread_mutex_t *mutex = data->mutex;
@@ -142,14 +141,13 @@ void *test3_loop2(void *arg)
 			printf("loop2[%d]\n", i);
 			break;
 		}
-		pthread_cond_signal(cond2);
 		pthread_mutex_lock(mutex);
 		pthread_cond_signal(cond2);
 		pthread_cond_wait(cond1, mutex);
 		pthread_mutex_unlock(mutex);
 	}
 
-	MARK_STOP_TIME
+	MARK_STOP_TIME;
 }
 
 int test3(int times)
@@ -179,8 +177,57 @@ int test3(int times)
 	pthread_join(tid1, NULL);
 	pthread_join(tid2, NULL);
 
-
 	printf("test3 stopped\n");
+}
+
+struct test4_data {
+	pthread_mutex_t *mutex;
+	int times;
+};
+
+void *test4_loop(void *arg)
+{
+	MARK_START_TIME;
+
+	struct test4_data *data = arg;
+	int times = data->times;
+
+	int i = data->times;
+	while(i--)
+	{
+		pthread_mutex_lock(data->mutex);
+		pthread_mutex_unlock(data->mutex);
+	}
+
+	MARK_STOP_TIME;
+
+	return NULL;
+}
+
+int test4(int times, int threads)
+{
+	printf("test4 starting\n");
+	pthread_t *tids = (pthread_t *)malloc(sizeof(pthread_t*) * threads);
+
+	struct test4_data data;
+	data.mutex = (pthread_mutex_t *)malloc(sizeof(pthread_mutex_t));
+	data.times = times;
+
+	pthread_mutex_init(data.mutex, NULL);
+
+	pthread_attr_t attr;
+	pthread_attr_init(&attr);
+
+	int i = 0;
+	for (i = 0; i < threads; i++) {
+		pthread_create(tids + i, &attr, test4_loop, (void *) &data);
+	}
+
+	for (i = 0; i < threads; i++) {
+		pthread_join(tids[i], NULL);
+	}
+
+	printf("test4 stopped\n");
 }
 
 int main()
@@ -191,5 +238,7 @@ int main()
 	test2(1000*1000);
 
 	test3(1000*1000);
+
+	test4(1000*1000, 1000);
 }
 
