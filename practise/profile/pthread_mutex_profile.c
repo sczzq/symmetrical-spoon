@@ -96,6 +96,7 @@ struct test3_data {
 
 void *test3_loop1(void *arg)
 {
+	printf("start test3_loop1\n");
 	MARK_START_TIME;
 
 	struct test3_data *data = (struct test3_data *)arg;
@@ -120,10 +121,12 @@ void *test3_loop1(void *arg)
 	}
 
 	MARK_STOP_TIME;
+	printf("stop test3_loop1\n");
 }
 
 void *test3_loop2(void *arg)
 {
+	printf("start test3_loop2\n");
 	MARK_START_TIME;
 
 	struct test3_data *data = (struct test3_data *)arg;
@@ -148,6 +151,7 @@ void *test3_loop2(void *arg)
 	}
 
 	MARK_STOP_TIME;
+	printf("stop test3_loop2\n");
 }
 
 int test3(int times)
