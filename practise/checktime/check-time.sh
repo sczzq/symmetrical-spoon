@@ -519,7 +519,27 @@ function step9()
 	then
 		echo "start `date `"
 
-		awk -v tcount=$sid_count 'BEGIN{chunk=0;linecount=0;s[0]=0;}{linecount++; key=FNR-1; value=$1; chunk=int(key/tcount); rkey=value+chunk*tcount; rvalue=key%tcount; s[rkey]=rvalue;}END{for(i=tcount;i<linecount;i++) print s[i]}' $infile > $outfile
+		awk -v tcount=$sid_count '\
+		BEGIN
+		{
+			chunk=0;
+			linecount=0;
+			s[0]=0;
+		}
+		{
+			linecount++;
+			key=FNR-1;
+			value=$1;
+			chunk=int(key/tcount);
+			rkey=value+chunk*tcount;
+			rvalue=key%tcount;
+			s[rkey]=rvalue;
+		}
+		END
+		{
+			for(i=tcount;i<linecount;i++)
+				print s[i];
+		}' $infile > $outfile
 
 		echo "end `date `"
 		echo "step finished, get."
@@ -579,7 +599,7 @@ function step11()
 		do
 			echo "in $i, start `date`"
 			# put index and content paste to one file.
-			tempfile="tempfile.txt"
+			tempfile="tempfile$i.txt"
 			paste -d ' ' ${filename10[$i]} ${filename6[$i]}  > $tempfile
 			# 
 			echo "in $i, start of resort in awk `date`"
@@ -587,14 +607,14 @@ function step11()
 			echo "in $i, end of resort in awk `date`"
 
 			# remove first field of each line.
-			cut -d ' ' -f 2- ${filename11[$i]} > $tempfile
-			cp $tempfile ${filename11[$i]} 
+#cut -d ' ' -f 2- ${filename11[$i]} > $tempfile
+#cp $tempfile ${filename11[$i]} 
 
 			echo "in $i, end `date`"
 		done
 		echo "end of resort, `date`"
 
-		rm $tempfile
+#		rm $tempfile
 
 		echo "end `date `"
 		echo "step finished, get sorted sessionid file each keywords."
@@ -872,11 +892,13 @@ then
 	step8 $k7_message_sessionid_file $k8_wholefileindex_file
 
 	k9_rwholefileindex_file="9_rwholefileindex.txt"
-	step9 $k8_wholefileindex_file $k9_rwholefileindex_file
+#	step9 $k8_wholefileindex_file $k9_rwholefileindex_file
+	cp $k8_wholefileindex_file $k9_rwholefileindex_file
 
 	step10 $k8_wholefileindex_file $k9_rwholefileindex_file
 
 	step11
+	exit 0
 	step12
 
 	# paste to one
