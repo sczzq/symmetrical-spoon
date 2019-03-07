@@ -39,13 +39,13 @@ using std::chrono::steady_clock;
 
 class SendPolicy {
 	public:
-		SendPolicy();
+		SendPolicy(string id, ConfigSlice conf);
 		~SendPolicy();
 
 		// this function will parse the string,
 		// and then set it to ids and other members.
 		// then the older one is replaced by the newer one.
-		int setPolicy(ConfigSlice config);
+		int setPolicy(ConfigSlice conf);
 
 		// if send strategy is analog realtime
 		// this call maybe blocked to wait next time point.
@@ -75,7 +75,7 @@ class SendPolicy {
 		int piece_duration;
 		vector<int> piece_durations;
 
-		ConfigSlice configslice;
+		ConfigSlice config;
 };
 
 };

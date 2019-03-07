@@ -8,20 +8,21 @@ using std::string;
 /*
  */
 
-class Output : public OutputInterface {
+class OutputFile : public OutputInterface {
 	public:
-		std::string filename;
-		std::ofstream ostrm;
+		OutputFile(ConfigSlice conf);
+		~OutputFile();
+
+		string name;
+
+		ofstream ostrm;
 
 		void Run();
 		void Stop();
 
 		int Push(TimestampInterface& ts);
 
-		Output();
-		override ~Output();
-
-		ConfigSlice configslice;
+		ConfigSlice config;
 };
 
 };

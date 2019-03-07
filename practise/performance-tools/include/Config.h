@@ -23,6 +23,9 @@ using std::vector;
 //		invoke_policy
 class ConfigSlice {
 	public:
+		string name;
+		string id;
+
 		map<string, map<string,string>> configs;
 
 		string sequence();
@@ -46,7 +49,7 @@ class InvokerConfigs {
 // call InvokePolicy to work one after another.
 class Config {
 	public:
-		InvokerConfigs configs;
+		map<string, ConfigSlice> configs;
 
 		// pass configs to invokepolicys.
 		vector<InvokePolicy> invokepolicys;

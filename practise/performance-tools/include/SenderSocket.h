@@ -13,6 +13,8 @@ class SenderSocket : public SenderInterface {
 		SenderSocket();
 		virtual ~SenderSocket();
 
+		const string type = "SOCKET";
+
 		virtual int send(const AudioPiece audiopiece);
 		virtual int recv(Result& result);
 };

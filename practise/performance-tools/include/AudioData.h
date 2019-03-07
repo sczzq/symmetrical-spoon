@@ -36,14 +36,17 @@ class AudioPiece {
 		int format;
 };
 
+// audio file in directory.
+// read all audio files into memory
+// sort by ascci sequence.
 class AudioStream {
 	public:
-		AudioStream();
+		AudioStream(ConfigSlice conf);
 		~AudioStream();
 
 		char *data;
 
-		AudioPiece GetAudioPiece(AudioInfo audioinfo);
+		AudioPiece getAudioPiece(AudioInfo audioinfo);
 
 		// unit: byte.
 		int length;
@@ -52,6 +55,8 @@ class AudioStream {
 		int duration;
 
 		int format;
+
+		ConfigSlice config;
 };
 
 };

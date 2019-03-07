@@ -22,14 +22,29 @@ class InvokePolicy {
 		InvokePolicy(int id, Configs configs);
 		~InvokePolicy();
 
-		vector<Invoker> invokers;
+		vector<shared_ptr<Invoker>> invokers;
+
+		// threads to run invoker task.
+		vector<thread> threads;
 
 		atomic<int> invoker_count;
 
+		// Run will create invoker_count threads.
 		void Run();
+
+		// Stop will stop all threads.
 		void Stop();
+
 		void Status();
+
+		// donot expliciting waiting thread use join(),
+		// instand to check invoker_count 
+		// and then InvokePolicy could stop thread at sometime.
+		// interleave maybe 1 second to check invoker_count.
 		void Waiting();
+
+		// if finished, Invoker will call subCount.
+		void subCount() { --invoker_count; };
 
 		int id;
 };

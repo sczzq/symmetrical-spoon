@@ -10,11 +10,13 @@ using std::string;
 
 class SenderHTTP : public SenderInterface {
 	public:
-		SenderHTTP();
+		SenderHTTP(ConfigSlice conf);
 		virtual ~SenderHTTP();
 
 		virtual int send(const AudioPiece audiopiece);
 		virtual int recv(Result& result);
+
+		ConfigSlice config;
 };
 
 };

@@ -13,8 +13,10 @@ class Invoker {
 		Invoker(InvokerConfigs conf);
 		~Invoker();
 
+		int setInvokePolicy(InvokePolicy *p);
+
 		// in: NULL, out: AudioInfo
-		std::shared_ptr<SendPolicyInterface> sendPolicy;
+		std::shared_ptr<SendPolicyInterface> sendpolicy;
 
 		// in: AudioInfo, out: AudioPiece
 		std::shared_ptr<AudioStream> audio;
@@ -25,11 +27,22 @@ class Invoker {
 		// in: Timestamp, out: NULL
 		std::shared_ptr<OutputInterface> output;
 
-		void Run();
+		// entry of thread.
+		static void Run(shared_ptr<Invoker> this_);
+
 		void Stop();
+
+		// return finished piece.
 		int  Status();
 
 		InvokerConfigs configs;
+
+		// just a pointer
+		// set by passed this in InvokePolicy to construct Invoker.
+		// donot need to release this pointer.
+		// Invoke donot own this pointer.
+		// Invoke will call InvokePolicy::Sub to update the alive Invoker.
+		InvokePolicy *invokepolicy;
 
 		int id;
 };
