@@ -1,0 +1,119 @@
+{
+	"send_policy" : [
+		{
+			"id" : "0",
+			"request_limit":"30",
+			"duration_limit":"0",
+			"slice_duration":"1000",
+			"sequence":"0-0"
+		}
+	],
+	"interface" : [
+		{
+			"id" : "1",
+			"type" : "api",
+			"path" : "$HOME/perf-tools/bin"
+		},
+		{
+			"id" : "2",
+			"type" : "http",
+			"path" : "ip:port",
+			"method" : "post",
+			"url" : "/recognize"
+		},
+		{
+			"id" : "5",
+			"type" : "https",
+			"path" : "ip:port",
+			"method" : "post",
+			"url" : "/recognize"
+		},
+		{
+			"id" : "3",
+			"type" : "socket",
+			"path" : "ip:port"
+		},
+		{
+			"id" : "4",
+			"type" : "websocket",
+			"path" : "ip:port"
+		}
+	],
+	"output" : [
+		{
+			"id" : "1",
+			"type" : "file",
+			"path" : "$HOME/result"
+		},
+		{
+			"id" : "2",
+			"type" : "socket",
+			"path" : "ip:port"
+		},
+		{
+			"id" : "3",
+			"type" : "socket",
+			"path" : "ip2:port2"
+		}
+	],
+	"audio" : [
+		{
+			"id" : "1",
+			"dir" : "$HOME/audio/pcm",
+			"informat" : "pcm8k16bit",
+			"outformat" : "pcm8k16bit"
+		},
+		{
+			"id" : "2",
+			"dir" : "$HOME/audio/wav",
+			"informat" : "wav",
+			"outformat" : "wav"
+		}
+	],
+	"result" : [
+		{
+			"id" : "1",
+			"format" : "table",
+			"field_seperator" : "|",
+			"line_seperator" : "\r\n"
+		},
+		{
+			"id" : "2",
+			"format" : "json",
+			"type" : "compressed"
+		},
+		{
+			"id" : "3",
+			"foramt" : "xml",
+			"type" : "compressed"
+		}
+	],
+	"log" : [
+		{
+			"id" : "1",
+			"type" : "file",
+			"path" : "$HOME/result/perf_file.log",
+			"bak_postfix" : ".N",
+			"max_bak" : "10",
+			"maxfilesize" : "100M"
+		}
+	],
+	"invoker_group" : [
+		{
+			"id" : "1",
+			"members" : "1-10"
+		}
+	],
+	"invoke_policy" : [
+		{
+			"id" : "1",
+			"invoker_group_id" : "1",
+			"audio_id" : "1",
+			"interface_id" : "2",
+			"send_policy_id" : "0",
+			"output_id" : "1",
+			"result_id" : "1"
+		}
+	]
+}
+

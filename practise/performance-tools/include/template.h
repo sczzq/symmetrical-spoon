@@ -1,7 +1,7 @@
 #ifndef 
 #define 
 
-namespace performance {
+namespace perf_test_tool {
 
 using std::string;
 

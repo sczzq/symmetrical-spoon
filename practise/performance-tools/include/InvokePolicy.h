@@ -1,7 +1,7 @@
 #ifndef _Invoke_Policy__
 #define _Invoke_Policy__
 
-namespace performance {
+namespace perf_test_tool {
 
 #include <string>
 #include <vector>
@@ -9,23 +9,29 @@ namespace performance {
 #include "Invoker.h"
 
 using std::string;
+using std::vector;
+using std::atomic;
 
 /*
  */
 
-class  InvokePolicy {
+// get invoke_policy config by id.
+
+class InvokePolicy {
 	public:
-		InvokePolicy();
+		InvokePolicy(int id, Configs configs);
 		~InvokePolicy();
 
 		vector<Invoker> invokers;
 
-		int waiting();
-
-		int getStatus();
-
 		atomic<int> invoker_count;
 
+		void Run();
+		void Stop();
+		void Status();
+		void Waiting();
+
+		int id;
 };
 
 };

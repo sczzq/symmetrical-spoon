@@ -1,7 +1,7 @@
 #ifndef _Send_Policy__
 #define _Send_Policy__
 
-namespace performance {
+namespace perf_test_tool {
 
 #include <string>
 #include <vector>
@@ -39,16 +39,31 @@ using std::chrono::steady_clock;
 
 class SendPolicy {
 	public:
+		SendPolicy();
+		~SendPolicy();
+
 		// this function will parse the string,
 		// and then set it to ids and other members.
-		int setPolicy(string policy_str);
+		// then the older one is replaced by the newer one.
+		int setPolicy(ConfigSlice config);
 
 		// if send strategy is analog realtime
 		// this call maybe blocked to wait next time point.
-		AudioPiece GetNextPiece();
+		AudioInfo GetNextPiece();
+
+		// use this index to get 
+		//		next id in ids.
+		//		next start-point in starts.
+		//		next duration in piece_durations,
+		//		next length in piece_lengths.
+		int next_index;
 
 		// sequence id.
 		vector<int> ids;
+
+		// start point.
+		// accumulating point in the audio stream.
+		vector<int> starts;
 
 		// byte length
 		int piece_length;
@@ -60,14 +75,7 @@ class SendPolicy {
 		int piece_duration;
 		vector<int> piece_durations;
 
-		// analog realtime
-		// as soon as possible
-		int strategy;
-
-		// before return by GetNextPiece to set cur.
-		// and
-		// next GetNextPiece to use cur to get the sleeping time or blocking time.
-		stready_clock::time_point cur;
+		ConfigSlice configslice;
 };
 
 };

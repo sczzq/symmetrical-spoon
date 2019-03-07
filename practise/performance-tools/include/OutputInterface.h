@@ -8,20 +8,20 @@ using std::string;
 /*
  */
 
-class Output : public OutputInterface {
+class OutputInterface {
 	public:
-		std::string filename;
-		std::ofstream ostrm;
+		std::atomic<bool> status;
+		std::mutex mtx;
+		std::condition_variable cv;
 
 		void Run();
 		void Stop();
 
 		int Push(TimestampInterface& ts);
 
-		Output();
-		override ~Output();
-
-		ConfigSlice configslice;
+	private:
+		OutputInterface();
+		virtual ~OutputInterface();
 };
 
 };

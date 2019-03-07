@@ -1,7 +1,7 @@
 #ifndef _Invoker__
 #define _Invoker__
 
-namespace performance {
+namespace perf_test_tool {
 
 using std::string;
 
@@ -10,17 +10,28 @@ using std::string;
 
 class Invoker {
 	public:
-
-		Invoker();
+		Invoker(InvokerConfigs conf);
 		~Invoker();
 
-		SendPolicy sendPolicy;
+		// in: NULL, out: AudioInfo
+		std::shared_ptr<SendPolicyInterface> sendPolicy;
 
-		Sender sender;
+		// in: AudioInfo, out: AudioPiece
+		std::shared_ptr<AudioStream> audio;
 
-		Output output;
+		// in: AudioPiece, out: Timestamp
+		std::shared_ptr<SenderInterface> sender;
 
-		int status;
+		// in: Timestamp, out: NULL
+		std::shared_ptr<OutputInterface> output;
+
+		void Run();
+		void Stop();
+		int  Status();
+
+		InvokerConfigs configs;
+
+		int id;
 };
 
 };
