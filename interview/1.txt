@@ -1,0 +1,3 @@
+有一堆运动员，每个人身上都有号码，号码的位数可以是从1-n，n在input中给出，
+还给一个upper bound，求upper bound下的confusion number的个数
+confusion number以0 1 6 8 9 为组成部分
