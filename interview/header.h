@@ -23,6 +23,7 @@ int queue_capalibity(Queue *queue);
 
 
 typedef struct BinarySearchTree BinarySearchTree;
+typedef struct Node Node;
 typedef int (*Compare)(void *, void *);
 int string_compare(void *s1, void *s2);
 int integer_compare(void *s1, void *s2);
@@ -44,6 +45,20 @@ int dlllist_delete(DoubleLinkedList *list, void *data);
 int dllist_reverse(DoubleLinkedList *list);
 void dllist_transfer_front(DoubleLinkedList *list);
 void dllist_transfer_back(DoubleLinkedList *list);
+
+int random_string(char *rand_str, int length);
+int random_integer(int *, int size, int max);
+
+
+typedef struct val_varry val_varry;
+val_varry *getValVarry();
+val_varry *copyValVarry(val_varry * val);
+void releaseValVarry(val_varry *val);
+int insertValVarry(val_varry *val, int d);
+int sumValVarry(val_varry *val);
+int getSumValVarry(val_varry *val);
+int sizeValVarry(val_varry *val);
+int dataValVarry(val_varry *val, int index);
 
 #endif
 

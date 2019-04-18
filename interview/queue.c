@@ -48,11 +48,11 @@ Queue *queueEnlarge(Queue *queue)
 		int old_capability = queue->capability;
 		queue->capability *= 2;
 		queue->data = realloc(queue->data,
-				queue->capability);
+				queue->capability * sizeof(void *));
 		if (queue->start > queue->end)
 		{
-			memcpy(queue->data+old_capability,
-					queue->data, queue->end);
+			memcpy(queue->data+old_capability*sizeof(void *),
+					queue->data, queue->end * sizeof(void *));
 			queue->end += old_capability;
 		}
 	}
@@ -62,23 +62,26 @@ Queue *queueEnlarge(Queue *queue)
 void queue_push_front(Queue *queue, void *data)
 {
 	queueEnlarge(queue);
-	queue->start = queue->start == 0 ? queue->capability-1 : queue->start -1;
 	queue->data[queue->start] = data;
+	queue->start = (queue->start - 1 + queue->capability) % queue->capability;
 	queue->size++;
 }
 
 void queue_pop_front(Queue *queue, void **data)
 {
-	*data = queue->data[queue->start];
-	queue->start = (queue->start + 1 + queue->capability) % queue->capability;
-	queue->size--;
+	if (queue->size > 0)
+	{
+		*data = queue->data[queue->start];
+		queue->start = (queue->start + 1 + queue->capability) % queue->capability;
+		queue->size--;
+	}
 }
 
 void queue_push_back(Queue *queue, void *data)
 {
 	queueEnlarge(queue);
-	queue->end = queue->end == queue->capability-1 ? 0 : queue->end + 1;
 	queue->data[queue->end] = data;
+	queue->end = (queue->end + 1 + queue->capability) % queue->capability;
 	queue->size++;
 }
 
@@ -115,8 +118,8 @@ int queue_test1()
 	char *s2 = "world";
 
 	Queue *q = getQueue();
-	push_front(q, (void *)s1);
-	push_front(q, (void *)s2);
+	queue_push_front(q, (void *)s1);
+	queue_push_front(q, (void *)s2);
 
 	printf("size: %d\n", queue_size(q));
 	printf("capability: %d\n", queue_capalibity(q));
@@ -124,14 +127,14 @@ int queue_test1()
 
 	char *s3;
 
-	pop_front(q, (void **)&s3);
+	queue_pop_front(q, (void **)&s3);
 	printf("s: %s\n", s3);
 
 	printf("size: %d\n", queue_size(q));
 	printf("capability: %d\n", queue_capalibity(q));
 	printf("start: %d, end: %d\n", queue_start(q), queue_end(q));
 
-	pop_front(q, (void **)&s3);
+	queue_pop_front(q, (void **)&s3);
 	printf("s: %s\n", s3);
 
 	printf("size: %d\n", queue_size(q));
