@@ -106,9 +106,8 @@ void RunSecondary() {
 	int kMaxKey = 12345667;
     while (1 == ShouldSecondaryWait().load(std::memory_order_relaxed)) {
 	  uint64_t curr_key = std::rand() % kMaxKey;
-      string key = Key(curr_key);
 	  count++;
-	  fprintf(stderr, "count: %d, key: %s\n", count, key.c_str());
+	  fprintf(stderr, "count: %d, key: %llu\n", count, curr_key);
       std::this_thread::sleep_for(std::chrono::seconds(1));
     }
     fprintf(stdout, "[process %ld] Point lookup thread finished\n", my_pid);
