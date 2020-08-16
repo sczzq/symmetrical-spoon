@@ -1,0 +1,51 @@
+
+
+
+awk
+cat
+cut
+diff
+file
+find
+formatting file contents:	fmt pr fold
+gdb
+git
+GNU Coreutils
+grep
+hash
+head
+hexdump
+iostat
+join
+less
+more
+netstat
+nl
+nm
+nmap
+operating on sorted files:	sort shuf uniq comm ptr tsort
+output of entire files:		cat tac nl od base32 base64
+paste
+ps
+ptree
+sed
+seq
+sort
+split
+strace
+strip
+sum
+summarizing files:		wc sum cksum b2sum md5sum sha1sum sha256sum
+sync
+tail
+talk
+tee
+top
+touch
+tr
+tsort
+uniq
+valgrind
+wall
+wc
+wget

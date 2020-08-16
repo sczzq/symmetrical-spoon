@@ -1,0 +1,137 @@
+
+464
+100 game
+----------------------------------------
+
+在这个游戏中，两名玩家轮流选择从 1 到 maxChooseInteger 的任意整数, 不能重复使用,
+累计整数和，先使得累计整数和达到 desiredTotal 的玩家，即为胜者。
+
+给定一个整数 maxChoosableInteger （整数池中可选择的最大数）和另一个整数 desiredTotal（累计和），判断先出手的玩家是否能稳赢（假设两位玩家游戏时都表现最佳）？
+
+
+__________________________________________________________________________
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+486
+predict winner
+-----------------------------------------
+given a nonegative integer array, which means the scores or something.
+player 1 get a number from the left or right of the array,
+then player 2 get a number from the left or right of the array.
+each player can get just one number each time.
+the number is un-get if its is get.
+if no number left in the array, the game over.
+the maximum score is the winner.
+we will plus all number each winner get, the sum is its scores.
+
+to predict player 1 is or not be winner.
+
+
+__________________________________________________________________________
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+638
+shopping offers
+----------------------------------------
+
+each item has a price
+a special offer consists of one or more different kinds of items with a sale price
+
+given the each item's price, a set of special offers, the number we need to buy for each item
+to output the lowest price
+
+__________________________________________________________________________
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+300
+longest inceasing subsequence
+----------------------------------------
+
+given an unsorted array of integers, find the length of longest increasing subsequence.
+
+more, output the subsequence
+
+__________________________________________________________________________
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+646
+Maximum length of pair chain
+-----------------------------------------
+
+given n pairs of numbers.
+In every pair, the first number is always smalles than the second number.
+
+define a pair (c, d) can follow another pair (a, b) if and only if b < c.
+Chain of pairs can be formed in this fashion.
+
+given a set of pairs, find the longest chain which can be formed.
+you can select pairs in any order.
+
+__________________________________________________________________________
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+bag problem
+=========================================
+
+0/1 bag
+-------------------------
+the kind of things is n, its index are 1, 2, 3, ..., n
+the capacity of bag is m
+each thing has a value a={a1, a2,..., an} and weight b={b1, b2, b3,..., bn}
+
+output the maximum value of tha bag can store
+
+Note, things just get once.
+
+number n
+capacity m
+value a
+weight b
+
+
+Complete bag
+-------------------------
+others same to 0/1 bag
+the change is Note
+things can get repetitively
+
+
+
+multi bag
+------------------------
+things has kind n
+each kind of things has a number  k1, k2, k3, ..., kn
+each kind of things has a value a1, a2, a3, ..., an 
+each kind of things has a weight b1, b2, b3, ..., bn
+the bag has capacity m
+
+output the maximum value of the bag can store
+
+
+
+
+
+more
+------------------------
+1, there is a pack that is a cube with one null face, has length, width, height 
+   there are some cubes, we can put cube to pack through its null face.
+   Question:
+   	input is pack's length, width, height and cubes' length, width, height
+	output the largest number of cubes that the pack can put.
+
+   if each cube has weight
+     1, largest weight, full or as fullest as possible
+	 2, smallest weight, full or as fullest as possible
+
+
+
+
+

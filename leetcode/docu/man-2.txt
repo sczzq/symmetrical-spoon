@@ -1,0 +1,94 @@
+select, pselect
+----------------------------------------------------------------
+1, timeout
+2, fd is ready
+3, signal interupt
+
+if any fd is ready, return value the number of set which are ready
+has three set, read, write, except
+use FD_ISSET to check which one is ready in each set,
+	from 1 or just the fd which you want used
+
+in kernel, kernel to check each one from 1 to largest number in set
+after returned, we should check
+
+To minitor file descriptors greater than 1023, use poll(2) instead.
+
+we need restore fd set after each return.
+and the timeout variable is changed.
+
+
+
+poll, ppoll - wait for some event on a file descriptor
+--------------------------------------------------------------------
+1, timeout
+2, fd is ready
+3, signal interupt
+
+pass monitoring set and its number, and timeout, and signal mask
+fd event struct: 
+	given fd, needed events, then kernel return occured event
+
+return the number of fd event
+we should check every revent field in monitoring set.
+
+we need restore fd event set after each return.
+or just reset revent field in changed fd event structures.
+
+
+
+
+epoll  - I/O event notification facility
+---------------------------------------------------------------------
+1, timeout
+2, fd is ready
+3, signal interupt
+
+edge-triggered, level-triggered
+
+1, epoll_create, create new epoll instance
+2, epoll_ctl, add or del fd structure set
+3, epoll_wait, waits for I/O events, blocking
+
+
+
+system call, wrapper of system call
+-------------------------------------------------------------------
+network
+process
+memory
+time
+file
+file descriptor I/O multiplexing
+system status
+
+
+
+splice
+---------
+moves data between two file descriptors
+without copying between kernel address space and user address space.
+
+
+
+
+
+
+accept
+-----------
+connection request queue, pending connection
+so, each listening socket has a connection queue
+1, request queue
+2, connected queue
+
+
+ 
+
+
+
+
+
+
+
+
+

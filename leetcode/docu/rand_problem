@@ -1,0 +1,24 @@
+478
+-----------------------
+given radius and center point (x, y).
+output a uniform distributed random point in the circle.
+
+center point and output are all float number.
+
+
+Note:
+a point on the circumference of the circle is considered to be int the circle.
+output point is 2-d point.
+
+
+
+470
+-----------------------
+given rand7(), an uniform distributed random function.
+to implement rand10(), another uniform distributed random function.
+
+output an uniform distributed random number using rand10() for each call.
+
+
+
+
