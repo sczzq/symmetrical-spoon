@@ -54,13 +54,13 @@ public:
 				int right = nums[j] + dp[i][j-1].second;
 				if(left > right)
 				{
-					dp[i][j].first = left;
 					dp[i][j].second = dp[i+1][j].first;
+					dp[i][j].first = left;
 				}
 				else
 				{
-					dp[i][j].first = right;
 					dp[i][j].second = dp[i][j-1].first;
+					dp[i][j].first = right;
 				}
 			}
 		}
@@ -81,13 +81,13 @@ public:
 				int right = nums[j] + dp[j-1].second;
 				if(left > right)
 				{
-					dp[j].first = left;
 					dp[j].second = dp[j].first;
+					dp[j].first = left;
 				}
 				else
 				{
-					dp[j].first = right;
 					dp[j].second = dp[j-1].first;
+					dp[j].first = right;
 				}
 			}
 
