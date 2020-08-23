@@ -16,6 +16,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <bitset>
+#include <list>
 
 using namespace std;
 
